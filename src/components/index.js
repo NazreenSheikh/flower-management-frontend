@@ -1,12 +1,15 @@
 import React from 'react';
-// import Footer from './home/Footer';
 import Navbar from './home/Navbar';
+import ProductCard from './home/ProductCard';
 
 const Main = (props) => {
     return (
         <div>
             <Navbar />
-            {/* <Footer /> */}
+            <div>
+                <ProductCard />
+                <ProductCard />
+            </div>
         </div>
     );
 }
