@@ -1,8 +1,6 @@
 .topbar {
     background: var(--dark);
     color: var(--inverse);
-    font-size: 1.25rem;
-    height: 10vh;
 }
 
 .topbar a {
@@ -14,7 +12,7 @@
 }
 
 .custom-toggler .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='white' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='var(--inverse)' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='var(--inverse)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
 
 .secondNavItem {
@@ -22,20 +20,16 @@
 }
 
 .logo {
-    background: white;
+    background: var(--inverse);
     color: black;
     height: 50px;
     width: 70px;
     border-radius: 8px;
     padding: 0px 8px;
+    padding-bottom: 8px;
     font-weight: bold;
+    margin-right: 5px;
 }
-
-/* .carousel img {
-    width: 100%;
-    object-fit: cover;
-    height: 70vh;
-} */
 
 .customShadow {
     -webkit-box-shadow: 0 5px 6px -6px black;
@@ -43,23 +37,30 @@
     box-shadow: 0 5px 6px -6px black;
 }
 
+.customShadow img {
+    height: 260px;
+}
+
 .CategoryCard {
     border: none;
     border-radius: 75%;
+    margin-left: 10px;
 }
 
 .CategoryCard img {
-    height: 80px;
-    width: 80px;
+    height: 100px;
+    width: 100px;
 }
 
 .footer {
     width: 100%;
-    background: whitesmoke;
+    background: var(--inverse) smoke;
     padding: 10px;
     color: DimGrey;
 }
 
-.viewAllProdcutCard {
-    margin-top: 120px;
+.customCardSize {
+    max-width: 24rem;
+    margin-left: 0px;
+    margin: 0 auto;
 }

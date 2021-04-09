@@ -8,11 +8,8 @@ const ProductCard = (props) => {
             </div>
             <hr />
             <div className="row">
-                <div className="col-lg-4 col-md-6">
-                    <div
-                        className="card customShadow"
-                        style={{ width: "18rem" }}
-                    >
+                <div className="col-lg-4 col-md-6 col-xl-3  mb-3">
+                    <div className="card customShadow customCardSize">
                         <img
                             className="card-img-top"
                             src="http://magento2.templatemela.com/MAG2014/MAG110246_3/pub/media/catalog/product/cache/9b42c9fe0793b3082848ac5ebfa58963/7/9/79_2_1_1.jpg"
@@ -27,11 +24,8 @@ const ProductCard = (props) => {
                         </div>
                     </div>
                 </div>
-                <div className="col-lg-4 col-md-6">
-                    <div
-                        className="card customShadow"
-                        style={{ width: "18rem" }}
-                    >
+                <div className="col-lg-4 col-md-6 col-xl-3 mb-3">
+                    <div className="card customShadow customCardSize">
                         <img
                             className="card-img-top"
                             src="http://magento2.templatemela.com/MAG2014/MAG110246_3/pub/media/catalog/product/cache/9b42c9fe0793b3082848ac5ebfa58963/8/8/88.jpg"
@@ -46,11 +40,8 @@ const ProductCard = (props) => {
                         </div>
                     </div>
                 </div>
-                <div className="col-lg-4 col-md-6">
-                    <div
-                        className="card customShadow"
-                        style={{ width: "18rem" }}
-                    >
+                <div className="col-lg-4 col-md-6 col-xl-3 mb-3">
+                    <div className="card customShadow customCardSize">
                         <img
                             className="card-img-top"
                             src="http://magento2.templatemela.com/MAG2014/MAG110246_3/pub/media/catalog/product/cache/9b42c9fe0793b3082848ac5ebfa58963/2/9/29_1.jpg"
@@ -65,11 +56,8 @@ const ProductCard = (props) => {
                         </div>
                     </div>
                 </div>
-                <div className="col-lg-4 col-md-6">
-                    <div
-                        className="card customShadow viewAllProdcutCard"
-                        style={{ width: "18rem", marginBottom: "1rem" }}
-                    >
+                <div className="col-lg-4 col-md-6 col-xl-3 mb-3">
+                    <div className="card customShadow viewAllProdcutCard customCardSize">
                         <div className="card-body text-center">
                             <h3>Category Name</h3>
                             <p className="card-text">
