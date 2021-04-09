@@ -1,4 +1,5 @@
 import React, { Fragment } from "react";
+import { Link } from "react-router-dom";
 
 const SignIn = (props) => {
     return (
@@ -34,11 +35,11 @@ const SignIn = (props) => {
                         </div>
                         <button
                             type="button"
-                            class="btn btn-primary btn-block mb-1"
+                            class="btn btn-dark btn-block mb-1"
                         >
                             SIGNIN
                         </button>
-                        <a href="/signup"> Haven't account? Sign Up here </a>
+                        <Link to="/signup">Haven't account? Sign Up here</Link>
                     </form>
                 </div>
             </div>
