@@ -1,4 +1,5 @@
 import React, { Fragment } from "react";
+import { Link } from "react-router-dom";
 
 const ProductCard = (props) => {
     return (
@@ -69,7 +70,7 @@ const ProductCard = (props) => {
                                 type="button"
                                 className="btn btn-dark customShadow"
                             >
-                                View All
+                                <Link to="/products">View All</Link>
                             </button>
                         </div>
                     </div>

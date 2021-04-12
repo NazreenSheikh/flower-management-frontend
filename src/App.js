@@ -1,9 +1,10 @@
 import React from "react";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Home from "./components/Home";
 import SignIn from "./components/auth/SignIn";
 import SignUp from "./components/auth/SignUp";
 import Navbar from "./components/partials/Navbar";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import Product from "./components/home/Products";
 
 function App() {
     return (
@@ -13,6 +14,9 @@ function App() {
                 <Switch>
                     <Route exact path="/">
                         <Home />
+                    </Route>
+                    <Route exact path="/products">
+                        <Product />
                     </Route>
                     <Route exact path="/login">
                         <SignIn />

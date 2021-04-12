@@ -5,6 +5,7 @@
 
 .topbar a {
     color: var(--inverse);
+    font-size: 1.25rem;
 }
 
 .custom-toggler.navbar-toggler {
