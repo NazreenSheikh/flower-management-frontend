@@ -1,11 +1,22 @@
 .topbar {
     background: var(--dark);
+    /* background: #232f3e; */
     color: var(--inverse);
 }
 
 .topbar a {
     color: var(--inverse);
     font-size: 1.25rem;
+}
+
+a {
+    text-decoration: none;
+    color: var(--inverse);
+}
+
+a:hover {
+    text-decoration: none;
+    color: var(--inverse);
 }
 
 .custom-toggler.navbar-toggler {
@@ -18,6 +29,16 @@
 
 .secondNavItem {
     border: 0 1px solid black;
+}
+
+.linkTag {
+    color: #232f3e;
+    text-decoration: none;
+}
+
+.linkTag:hover {
+    color: #ff9900;
+    text-decoration: none;
 }
 
 .logo {
@@ -64,4 +85,69 @@
     max-width: 24rem;
     margin-left: 0px;
     margin: 0 auto;
+}
+
+.customBtn {
+    background: #ff9900 !important;
+    color: #000000 !important;
+    border: none !important;
+}
+
+.customBtn:hover {
+    background: #232f3e !important;
+    color: #ff9900 !important;
+    border: none !important;
+}
+
+.cutomBtn:after {
+    background: #ff9900 !important;
+    color: #000000 !important;
+    border: none !important;
+}
+
+.cutomBtn:active:after {
+    background: #ff9900 !important;
+    color: #000000 !important;
+    border: none !important;
+}
+
+.cutomBtn:active {
+    background: #ff9900 !important;
+    color: #000000 !important;
+    border: none !important;
+}
+
+.customBtn1 {
+    background: #232f3e !important;
+    color: #ff9900 !important;
+    border: none !important;
+}
+
+.customBtn1:hover {
+    background: #ff9900 !important;
+    color: #232f3e !important;
+    border: none !important;
+}
+
+.cutomBtn1:after {
+    background: #232f3e !important;
+    color: #ff9900 !important;
+    border: none !important;
+}
+
+.cutomBtn1:active:after {
+    background: #232f3e !important;
+    color: #ff9900 !important;
+    border: none !important;
+}
+
+.cutomBtn1:active {
+    background: #232f3e !important;
+    color: #ff9900 !important;
+    border: none !important;
+}
+
+.customColor {
+    background: #232f3e;
+    color: white;
 }

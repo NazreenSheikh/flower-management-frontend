@@ -5,6 +5,7 @@ import SignIn from "./components/auth/SignIn";
 import SignUp from "./components/auth/SignUp";
 import Navbar from "./components/partials/Navbar";
 import Product from "./components/home/Products";
+import ProductDetail from "./components/home/ProductDetails";
 
 function App() {
     return (
@@ -17,6 +18,9 @@ function App() {
                     </Route>
                     <Route exact path="/products">
                         <Product />
+                    </Route>
+                    <Route exact path="/product/details">
+                        <ProductDetail />
                     </Route>
                     <Route exact path="/login">
                         <SignIn />

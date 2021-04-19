@@ -39,7 +39,9 @@ const SignIn = (props) => {
                         >
                             SIGNIN
                         </button>
-                        <Link to="/signup">Haven't account? Sign Up here</Link>
+                        <Link to="/signup" className="linkTag">
+                            Don't have an account? Sign Up here
+                        </Link>
                     </form>
                 </div>
             </div>

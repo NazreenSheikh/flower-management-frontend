@@ -40,7 +40,7 @@ const Signup = (props) => {
                                 id="phone"
                             />
                         </div>
-                        <div className="form-group">
+                        {/* <div className="form-group">
                             <label htmlFor="address">Address</label>
                             <input
                                 type="text"
@@ -48,7 +48,7 @@ const Signup = (props) => {
                                 name="address"
                                 id="address"
                             />
-                        </div>
+                        </div> */}
                         <div className="form-group">
                             <label htmlFor="password">Password</label>
                             <input
@@ -58,7 +58,7 @@ const Signup = (props) => {
                                 id="password"
                             />
                         </div>
-                        <div className="form-group">
+                        {/* <div className="form-group">
                             <label htmlFor="password">Confirm Password</label>
                             <input
                                 type="confirmPassword"
@@ -66,14 +66,16 @@ const Signup = (props) => {
                                 name="confirmPassword"
                                 id="confirmPassword"
                             />
-                        </div>
+                        </div> */}
                         <button
                             type="button"
                             class="btn btn-dark btn-block mb-1"
                         >
                             SIGNUP NOW
                         </button>
-                        <Link to="/login">Have account? Sign In here</Link>
+                        <Link className="linkTag" to="/login">
+                            Have account? Sign In here
+                        </Link>
                     </form>
                 </div>
             </div>

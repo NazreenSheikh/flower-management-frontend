@@ -1,4 +1,5 @@
 import React, { Fragment } from "react";
+import { Link } from "react-router-dom";
 
 const Product = (props) => {
     return (
@@ -18,8 +19,8 @@ const Product = (props) => {
                             <div class="card-body">
                                 <div>Product Name</div>
                                 <div>Price</div>
-                                <button className="btn btn-dark mt-2">
-                                    Buy Now
+                                <button className="btn customShadow btn-dark mt-2">
+                                    <Link to="/product/details"> Buy Now</Link>
                                 </button>
                             </div>
                         </div>
@@ -34,8 +35,8 @@ const Product = (props) => {
                             <div class="card-body">
                                 <div>Product Name</div>
                                 <div>Price</div>
-                                <button className="btn btn-dark mt-2">
-                                    Buy Now
+                                <button className="btn customShadow btn-dark mt-2">
+                                    <Link to="/product/details"> Buy Now</Link>
                                 </button>
                             </div>
                         </div>
@@ -50,8 +51,8 @@ const Product = (props) => {
                             <div class="card-body">
                                 <div>Product Name</div>
                                 <div>Price</div>
-                                <button className="btn btn-dark mt-2">
-                                    Buy Now
+                                <button className="btn customShadow btn-dark mt-2">
+                                    <Link to="/product/details"> Buy Now</Link>
                                 </button>
                             </div>
                         </div>
@@ -66,8 +67,8 @@ const Product = (props) => {
                             <div class="card-body">
                                 <div>Product Name</div>
                                 <div>Price</div>
-                                <button className="btn btn-dark mt-2">
-                                    Buy Now
+                                <button className="btn customShadow btn-dark mt-2">
+                                    <Link to="/product/details"> Buy Now</Link>
                                 </button>
                             </div>
                         </div>
