@@ -1,37 +1,15 @@
-import React from "react";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
-import Home from "./components/Home";
-import SignIn from "./components/auth/SignIn";
-import SignUp from "./components/auth/SignUp";
-import Navbar from "./components/partials/Navbar";
-import Product from "./components/home/Products";
-import ProductDetail from "./components/home/ProductDetails";
+import Routes from './components/Routes'
+// import { LayoutContext, layoutReducer, layoutState } from './components/shop'
 
 function App() {
+    // const [data, dispatch] = useReducer(layoutReducer, layoutState)
     return (
-        <div className="App">
-            <BrowserRouter>
-                <Navbar />
-                <Switch>
-                    <Route exact path="/">
-                        <Home />
-                    </Route>
-                    <Route exact path="/products">
-                        <Product />
-                    </Route>
-                    <Route exact path="/product/details">
-                        <ProductDetail />
-                    </Route>
-                    <Route exact path="/login">
-                        <SignIn />
-                    </Route>
-                    <Route exact path="/signup">
-                        <SignUp />
-                    </Route>
-                </Switch>
-            </BrowserRouter>
-        </div>
-    );
+        <>
+            {/* <LayoutContext.Provider value={{ data, dispatch }}> */}
+            <Routes />
+            {/* </LayoutContext.Provider> */}
+        </>
+    )
 }
 
-export default App;
+export default App
