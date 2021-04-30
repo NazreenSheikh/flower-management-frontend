@@ -1,18 +1,18 @@
 import React from 'react'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import { Categories, DashboardAdmin, Orders, Products } from './admin'
-import {
-    AdminProtectedRoute,
-    CartProtectedRoute,
-    CheckoutPage,
-    Home,
-    PageNotFound,
-    ProductByCategory,
-    ProductDetails,
-    ProtectedRoute,
-    WishList,
-} from './shop'
-import { SettingUser, UserOrders, UserProfile } from './shop/dashboardUser'
+import { BrowserRouter as Router, Switch } from 'react-router-dom'
+// import { Categories, DashboardAdmin, Orders, Products } from './admin'
+// import {
+//     AdminProtectedRoute,
+//     CartProtectedRoute,
+//     CheckoutPage,
+//     Home,
+//     PageNotFound,
+//     ProductByCategory,
+//     ProductDetails,
+//     ProtectedRoute,
+//     WishList,
+// } from './shop'
+// import { SettingUser, UserOrders, UserProfile } from './shop/dashboardUser'
 
 /* Routing All page will be here */
 const Routes = (props) => {
@@ -20,7 +20,7 @@ const Routes = (props) => {
         <Router>
             <Switch>
                 {/* Shop & Public Routes */}
-                <Route exact path="/" component={Home} />
+                {/* <Route exact path="/" component={Home} />
                 <Route exact path="/wish-list" component={WishList} />
                 <Route exact path="/products/:id" component={ProductDetails} />
                 <Route
@@ -32,11 +32,11 @@ const Routes = (props) => {
                     exact={true}
                     path="/checkout"
                     component={CheckoutPage}
-                />
+                /> */}
                 {/* Shop & Public Routes End */}
 
                 {/* Admin Routes */}
-                <AdminProtectedRoute
+                {/* <AdminProtectedRoute
                     exact={true}
                     path="/admin/dashboard"
                     component={DashboardAdmin}
@@ -55,11 +55,11 @@ const Routes = (props) => {
                     exact={true}
                     path="/admin/dashboard/orders"
                     component={Orders}
-                />
+                /> */}
                 {/* Admin Routes End */}
 
                 {/* User Dashboard */}
-                <ProtectedRoute
+                {/* <ProtectedRoute
                     exact={true}
                     path="/user/profile"
                     component={UserProfile}
@@ -73,11 +73,11 @@ const Routes = (props) => {
                     exact={true}
                     path="/user/setting"
                     component={SettingUser}
-                />
+                /> */}
                 {/* User Dashboard End */}
 
                 {/* 404 Page */}
-                <Route component={PageNotFound} />
+                {/* <Route component={PageNotFound} /> */}
             </Switch>
         </Router>
     )
