@@ -1,7 +1,7 @@
 import moment from 'moment'
 import React, { Fragment, useContext, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { isAuthenticate } from '../auth/fetchApi'
+import { isAuthenticate } from '../auth/FetchApi'
 import { LayoutContext } from '../layout'
 import { Alert, deleteReview } from './Action'
 import { getSingleProduct } from './FetchApi'

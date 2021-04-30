@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { signupReq } from './fetchApi'
+import { signupReq } from './FetchApi'
 
 const Signup = (props) => {
     const [data, setData] = useState({
