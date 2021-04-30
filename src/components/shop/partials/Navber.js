@@ -1,18 +1,19 @@
 import React, { Fragment, useContext } from 'react'
 import { useHistory, useLocation } from 'react-router-dom'
-import { isAdmin } from '../auth/FetchApi'
-import { LayoutContext } from '../index'
-import { logout } from './Action'
 import './style.css'
 
-const Navbar = (props) => {
+import { logout } from './Action'
+import { LayoutContext } from '../index'
+import { isAdmin } from '../auth/fetchApi'
+
+const Navber = (props) => {
     const history = useHistory()
     const location = useLocation()
 
     const { data, dispatch } = useContext(LayoutContext)
 
-    const navbarToggleOpen = () =>
-        data.navbarHamburger
+    const navberToggleOpen = () =>
+        data.navberHamburger
             ? dispatch({ type: 'hamburgerToggle', payload: false })
             : dispatch({ type: 'hamburgerToggle', payload: true })
 
@@ -28,7 +29,7 @@ const Navbar = (props) => {
 
     return (
         <Fragment>
-            {/* Navbar Section */}
+            {/* Navber Section */}
             <nav className="fixed top-0 w-full z-10 shadow-lg lg:shadow-none bg-white">
                 <div className="m-4 md:mx-12 md:my-6 grid grid-cols-4 lg:grid-cols-3">
                     <div className="hidden lg:block col-span-1 flex text-gray-600 mt-1">
@@ -53,7 +54,7 @@ const Navbar = (props) => {
                     </div>
                     <div className="col-span-2 lg:hidden flex justify-items-stretch	 items-center">
                         <svg
-                            onClick={(e) => navbarToggleOpen()}
+                            onClick={(e) => navberToggleOpen()}
                             className="col-span-1 lg:hidden w-8 h-8 cursor-pointer text-gray-600"
                             fill="none"
                             stroke="currentColor"
@@ -72,7 +73,7 @@ const Navbar = (props) => {
                             style={{ letterSpacing: '0.10rem' }}
                             className="flex items-left text-center font-bold uppercase text-gray-800 text-2xl cursor-pointer px-2 text-center"
                         >
-                            Hayroo
+                            Blooms Bay
                         </span>
                     </div>
                     <div
@@ -80,7 +81,7 @@ const Navbar = (props) => {
                         style={{ letterSpacing: '0.70rem' }}
                         className="hidden lg:block flex items-left col-span-1 text-center text-gray-800 font-bold tracking-widest uppercase text-2xl cursor-pointer"
                     >
-                        Hayroo
+                        Blooms Bay
                     </div>
                     <div className="flex items-right col-span-2 lg:col-span-1 flex justify-end">
                         {/*  WishList Page Button */}
@@ -404,7 +405,7 @@ const Navbar = (props) => {
                 </div>
                 <div
                     className={
-                        data.navbarHamburger && data.navbarHamburger
+                        data.navberHamburger && data.navberHamburger
                             ? 'px-1 pb-2 md:pb-0 md:px-10 lg:hidden'
                             : 'hidden px-1 pb-2 md:pb-0 md:px-10 lg:hidden'
                     }
@@ -431,9 +432,9 @@ const Navbar = (props) => {
                     </div>
                 </div>
             </nav>
-            {/* End Navbar Section */}
+            {/* End Navber Section */}
         </Fragment>
     )
 }
 
-export default Navbar
+export default Navber

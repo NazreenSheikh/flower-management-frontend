@@ -1,5 +1,5 @@
-import CartModal from './CartModal'
-import Footer from './Footer'
-import Navbar from './Navbar'
+import Navber from "./Navber";
+import Footer from "./Footer";
+import CartModal from "./CartModal";
 
-export { Navbar, Footer, CartModal }
+export { Navber, Footer, CartModal };
