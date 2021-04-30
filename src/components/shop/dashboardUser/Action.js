@@ -53,7 +53,7 @@ export const updatePersonalInformationAction = async (dispatch, fData) => {
     const formData = {
         user_id: fData.id,
         name: fData.name,
-        phoneNumber: fData.phone,
+        phone_number: fData.phone,
     }
     dispatch({ type: 'loading', payload: true })
     try {
