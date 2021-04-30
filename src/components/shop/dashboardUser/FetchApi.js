@@ -12,7 +12,7 @@ export const getUserById = async (user_id) => {
     }
 }
 
-export const updatePersonalWInformationFetch = async (userData) => {
+export const updatePersonalInformationFetch = async (userData) => {
     try {
         let res = await axios.post(`${apiURL}/api/user/edit-user`, userData)
         return res.data
