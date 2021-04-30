@@ -1,6 +1,6 @@
 import AdminProtectedRoute from './auth/AdminProtectedRoute'
 import CartProtectedRoute from './auth/CartProtectedRoute'
-import { isAdmin, isAuthenticate } from './auth/fetchApi'
+import { isAdmin, isAuthenticate } from './auth/FetchApi'
 import ProtectedRoute from './auth/ProtectedRoute'
 import Home from './home'
 import ProductByCategory from './home/ProductByCategory'
