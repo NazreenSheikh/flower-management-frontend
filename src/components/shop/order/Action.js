@@ -68,9 +68,8 @@ export const pay = async (
                                 user: JSON.parse(localStorage.getItem('jwt'))
                                     .user.user_id,
                                 amount: res.transaction.amount,
-                                transactionId: res.transaction.id,
                                 address: state.address,
-                                phone: state.phone,
+                                phone_number: state.phone,
                             }
                             try {
                                 let resposeData = await createOrder(orderData)

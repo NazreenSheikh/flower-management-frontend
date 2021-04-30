@@ -43,7 +43,7 @@ export const addReview = async (fData, setFdata, fetchData) => {
         rating: fData.rating,
         review: fData.review,
         pId: fData.pId,
-        uId: JSON.parse(localStorage.getItem('jwt')).user.user_id,
+        user_id: JSON.parse(localStorage.getItem('jwt')).user.user_id,
     }
     try {
         let responseData = await postAddReview(formData)
