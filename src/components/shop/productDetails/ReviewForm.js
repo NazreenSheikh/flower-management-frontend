@@ -14,7 +14,7 @@ const ReviewForm = (props) => {
         review: '',
         error: false,
         success: false,
-        pId: id,
+        product_id: id,
     })
 
     if (fData.error || fData.success) {
