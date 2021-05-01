@@ -68,7 +68,7 @@ export const editProduct = async (product) => {
     formData.append('pName', product.pName)
     formData.append('pDescription', product.pDescription)
     formData.append('pStatus', product.pStatus)
-    formData.append('pCategory', product.pCategory._id)
+    formData.append('pCategory', product.pcategory.category_id)
     formData.append('pQuantity', product.pQuantity)
     formData.append('pPrice', product.pPrice)
     formData.append('pOffer', product.pOffer)

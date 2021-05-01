@@ -67,7 +67,9 @@ const SingleProduct = (props) => {
                             <div className="relative col-span-1 m-2">
                                 <img
                                     onClick={(e) =>
-                                        history.push(`/products/${item._id}`)
+                                        history.push(
+                                            `/products/${item.product_id}`
+                                        )
                                     }
                                     className="object-cover object-center w-full cursor-pointer"
                                     src={`${apiURL}/uploads/products/${item.pImage}`}
