@@ -11,6 +11,7 @@ const AllCategory = (props) => {
 
     useEffect(() => {
         fetchData(dispatch)
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     if (loading) {
@@ -101,7 +102,7 @@ const CategoryTable = ({ order, editOrder }) => {
                     {order.allProduct.map((product, i) => {
                         return (
                             <span
-                                className="flex items-center block space-x-2"
+                                className="flex items-center space-x-2"
                                 key={i}
                             >
                                 <img
