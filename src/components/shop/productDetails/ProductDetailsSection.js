@@ -25,7 +25,7 @@ const ProductDetailsSection = (props) => {
     const [count, setCount] = useState(0) // Slide change state
 
     const [quantitiy, setQuantitiy] = useState(1) // Increse and decrese quantity state
-    const [alertQ, setAlertq] = useState(false) // Alert when quantity greater than stock
+    const [, setAlertq] = useState(false) // Alert when quantity greater than stock
 
     const [wList, setWlist] = useState(
         JSON.parse(localStorage.getItem('wishList'))
@@ -33,6 +33,7 @@ const ProductDetailsSection = (props) => {
 
     useEffect(() => {
         fetchData()
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     const fetchData = async () => {
@@ -106,7 +107,7 @@ const ProductDetailsSection = (props) => {
             />
             <section className="m-4 md:mx-12 md:my-6">
                 <div className="grid grid-cols-2 md:grid-cols-12">
-                    <div className="hidden md:block md:col-span-1 md:flex md:flex-col md:space-y-4 md:mr-2">
+                    <div className="hidden md:col-span-1 md:flex md:flex-col md:space-y-4 md:mr-2">
                         <img
                             onClick={(e) =>
                                 slideImage(
@@ -256,7 +257,7 @@ const ProductDetailsSection = (props) => {
                             {sProduct.pDescription}
                         </div>
                         <div className="my-4 md:my-6">
-                            {quantitiy == sProduct.pQuantity ? (
+                            {quantitiy === sProduct.pQuantity ? (
                                 <span className="text-xs text-red-500">
                                     Stock limited
                                 </span>
