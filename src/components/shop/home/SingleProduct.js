@@ -106,7 +106,11 @@ const SingleProduct = (props) => {
                                 <div className="absolute top-0 right-0 mx-2 my-2 md:mx-4">
                                     <svg
                                         onClick={(e) =>
-                                            isWishReq(e, item._id, setWlist)
+                                            isWishReq(
+                                                e,
+                                                item.product_id,
+                                                setWlist
+                                            )
                                         }
                                         className={`${
                                             isWish(item._id, wList) && 'hidden'

@@ -209,7 +209,11 @@ const ProductDetailsSection = (props) => {
                                 <span>
                                     <svg
                                         onClick={(e) =>
-                                            isWishReq(e, sProduct._id, setWlist)
+                                            isWishReq(
+                                                e,
+                                                sProduct.product_id,
+                                                setWlist
+                                            )
                                         }
                                         className={`${
                                             isWish(sProduct._id, wList) &&
