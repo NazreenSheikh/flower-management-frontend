@@ -158,7 +158,7 @@ const SingleProduct = (props) => {
                 })
             ) : (
                 <div className="flex items-center justify-center col-span-2 py-24 text-2xl md:col-span-3 lg:col-span-4">
-                    No product found
+                    No products found
                 </div>
             )}
         </Fragment>
