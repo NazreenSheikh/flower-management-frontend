@@ -1,29 +1,29 @@
-import AdminProtectedRoute from './auth/AdminProtectedRoute'
-import CartProtectedRoute from './auth/CartProtectedRoute'
-import { isAdmin, isAuthenticate } from './auth/FetchApi'
-import ProtectedRoute from './auth/ProtectedRoute'
-import Home from './home'
-import ProductByCategory from './home/ProductByCategory'
-import { LayoutContext } from './layout'
-import { layoutReducer, layoutState } from './layout/layoutContext'
-import PageNotFound from './layout/PageNotFound'
-import CheckoutPage from './order/CheckoutPage'
-import ProductDetails from './productDetails'
-import WishList from './wishlist'
+import Home from "./home";
+import WishList from "./wishlist";
+import ProtectedRoute from "./auth/ProtectedRoute";
+import AdminProtectedRoute from "./auth/AdminProtectedRoute";
+import CartProtectedRoute from "./auth/CartProtectedRoute";
+import { LayoutContext } from "./layout";
+import { layoutState, layoutReducer } from "./layout/layoutContext";
+import { isAdmin, isAuthenticate } from "./auth/fetchApi";
+import PageNotFound from "./layout/PageNotFound";
+import ProductDetails from "./productDetails";
+import ProductByCategory from "./home/ProductByCategory";
+import CheckoutPage from "./order/CheckoutPage";
 
 export {
-    Home,
-    WishList,
-    ProtectedRoute,
-    AdminProtectedRoute,
-    CartProtectedRoute,
-    LayoutContext,
-    layoutState,
-    layoutReducer,
-    isAdmin,
-    isAuthenticate,
-    PageNotFound,
-    ProductDetails,
-    ProductByCategory,
-    CheckoutPage,
-}
+  Home,
+  WishList,
+  ProtectedRoute,
+  AdminProtectedRoute,
+  CartProtectedRoute,
+  LayoutContext,
+  layoutState,
+  layoutReducer,
+  isAdmin,
+  isAuthenticate,
+  PageNotFound,
+  ProductDetails,
+  ProductByCategory,
+  CheckoutPage,
+};

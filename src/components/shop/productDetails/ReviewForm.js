@@ -1,6 +1,6 @@
 import React, { Fragment, useContext, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { isAuthenticate } from '../auth/FetchApi'
+import { isAuthenticate } from '../auth/fetchApi'
 import { LayoutContext } from '../layout'
 import { Alert, reviewSubmitHanlder } from './Action'
 import { getSingleProduct } from './FetchApi'
@@ -14,7 +14,7 @@ const ReviewForm = (props) => {
         review: '',
         error: false,
         success: false,
-        pId: id,
+        product_id: id,
     })
 
     if (fData.error || fData.success) {

@@ -1,6 +1,6 @@
 import React, { Fragment, useContext, useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
-import { isAuthenticate } from '../auth/FetchApi'
+import { isAuthenticate } from '../auth/fetchApi'
 import { LayoutContext } from '../index'
 import { cartList } from '../productDetails/Mixins'
 import { cartListProduct } from './FetchApi'
@@ -70,11 +70,11 @@ const CartModal = (props) => {
             >
                 <div
                     style={{ background: '#303031' }}
-                    className="w-full md:w-5/12 lg:w-4/12 h-full flex flex-col justify-between"
+                    className="flex flex-col justify-between w-full h-full md:w-5/12 lg:w-4/12"
                 >
                     <div className="overflow-y-auto">
-                        <div className="border-b border-gray-700 flex justify-between">
-                            <div className="p-4 text-white text-lg font-semibold">
+                        <div className="flex justify-between border-b border-gray-700">
+                            <div className="p-4 text-lg font-semibold text-white">
                                 Cart
                             </div>
                             {/* Cart Modal Close Button */}
@@ -94,20 +94,20 @@ const CartModal = (props) => {
                                 </svg>
                             </div>
                         </div>
-                        <div className="m-4 flex-col">
+                        <div className="flex-col m-4">
                             {products &&
                                 products.length !== 0 &&
                                 products.map((item, index) => {
                                     return (
                                         <Fragment key={index}>
                                             {/* Cart Product Start */}
-                                            <div className="text-white flex space-x-2 my-4 items-center">
+                                            <div className="flex items-center my-4 space-x-2 text-white">
                                                 <img
-                                                    className="w-16 h-16 object-cover object-center"
-                                                    src={`${apiURL}/uploads/products/${item.pImages[0]}`}
+                                                    className="object-cover object-center w-16 h-16"
+                                                    src={`${apiURL}/uploads/products/${item.pImage}`}
                                                     alt="cartProduct"
                                                 />
-                                                <div className="relative w-full flex flex-col">
+                                                <div className="relative flex flex-col w-full">
                                                     <div className="my-2">
                                                         {item.pName}
                                                     </div>
@@ -119,7 +119,7 @@ const CartModal = (props) => {
                                                             <div className="flex items-end">
                                                                 <span className="text-sm text-gray-200">
                                                                     {quantity(
-                                                                        item._id
+                                                                        item.product_id
                                                                     )}
                                                                 </span>
                                                             </div>
@@ -131,7 +131,7 @@ const CartModal = (props) => {
                                                             </span>{' '}
                                                             $
                                                             {subTotal(
-                                                                item._id,
+                                                                item.product_id,
                                                                 item.pPrice
                                                             )}
                                                             .00
@@ -142,7 +142,7 @@ const CartModal = (props) => {
                                                     <div
                                                         onClick={(e) =>
                                                             removeCartProduct(
-                                                                item._id
+                                                                item.product_id
                                                             )
                                                         }
                                                         className="absolute top-0 right-0 text-white"
@@ -168,7 +168,7 @@ const CartModal = (props) => {
                                 })}
 
                             {products === null && (
-                                <div className="m-4 flex-col text-white text-xl text-center">
+                                <div className="flex-col m-4 text-xl text-center text-white">
                                     No product in cart
                                 </div>
                             )}
@@ -177,7 +177,7 @@ const CartModal = (props) => {
                     <div className="m-4 space-y-4">
                         <div
                             onClick={(e) => cartModalOpen()}
-                            className="cursor-pointer px-4 py-2 border border-gray-400 text-white text-center cursor-pointer"
+                            className="px-4 py-2 text-center text-white border border-gray-400 cursor-pointer"
                         >
                             Continue shipping
                         </div>
@@ -185,7 +185,7 @@ const CartModal = (props) => {
                             <Fragment>
                                 {isAuthenticate() ? (
                                     <div
-                                        className="px-4 py-2 bg-black text-white text-center cursor-pointer"
+                                        className="px-4 py-2 text-center text-white bg-black cursor-pointer"
                                         onClick={(e) => {
                                             history.push('/checkout')
                                             cartModalOpen()
@@ -195,7 +195,7 @@ const CartModal = (props) => {
                                     </div>
                                 ) : (
                                     <div
-                                        className="px-4 py-2 bg-black text-white text-center cursor-pointer"
+                                        className="px-4 py-2 text-center text-white bg-black cursor-pointer"
                                         onClick={(e) => {
                                             history.push('/')
                                             cartModalOpen()
@@ -214,7 +214,7 @@ const CartModal = (props) => {
                                 )}
                             </Fragment>
                         ) : (
-                            <div className="px-4 py-2 bg-black text-white text-center cursor-not-allowed">
+                            <div className="px-4 py-2 text-center text-white bg-black cursor-not-allowed">
                                 Checkout
                             </div>
                         )}

@@ -1,18 +1,19 @@
 import React, { Fragment, useContext } from 'react'
 import { useHistory, useLocation } from 'react-router-dom'
-import { isAdmin } from '../auth/FetchApi'
+import { isAdmin } from '../auth/fetchApi'
 import { LayoutContext } from '../index'
 import { logout } from './Action'
 import './style.css'
 
-const Navbar = (props) => {
+
+const Navber = (props) => {
     const history = useHistory()
     const location = useLocation()
 
     const { data, dispatch } = useContext(LayoutContext)
 
-    const navbarToggleOpen = () =>
-        data.navbarHamburger
+    const navberToggleOpen = () =>
+        data.navberHamburger
             ? dispatch({ type: 'hamburgerToggle', payload: false })
             : dispatch({ type: 'hamburgerToggle', payload: true })
 
@@ -28,33 +29,27 @@ const Navbar = (props) => {
 
     return (
         <Fragment>
-            {/* Navbar Section */}
-            <nav className="fixed top-0 w-full z-10 shadow-lg lg:shadow-none bg-white">
-                <div className="m-4 md:mx-12 md:my-6 grid grid-cols-4 lg:grid-cols-3">
-                    <div className="hidden lg:block col-span-1 flex text-gray-600 mt-1">
+            {/* Navber Section */}
+            <nav className="fixed top-0 z-10 w-full bg-white shadow-lg lg:shadow-none">
+                <div className="grid grid-cols-4 m-4 md:mx-12 md:my-6 lg:grid-cols-3">
+                    <div className="flex hidden col-span-1 mt-1 text-gray-600 lg:block">
                         <span
-                            className="hover:bg-gray-200 px-4 py-3 rounded-lg font-light tracking-widest hover:text-gray-800 cursor-pointer"
+                            className="px-4 py-3 font-light tracking-widest rounded-lg cursor-pointer hover:bg-gray-200 hover:text-gray-800"
                             onClick={(e) => history.push('/')}
                         >
                             Shop
                         </span>
                         <span
-                            className="hover:bg-gray-200 px-4 py-3 rounded-lg font-light tracking-widest hover:text-gray-800 cursor-pointer"
-                            onClick={(e) => history.push('/blog')}
-                        >
-                            Blog
-                        </span>
-                        <span
-                            className="hover:bg-gray-200 px-4 py-3 rounded-lg font-light tracking-widest hover:text-gray-800 cursor-pointer"
+                            className="px-4 py-3 font-light tracking-widest rounded-lg cursor-pointer hover:bg-gray-200 hover:text-gray-800"
                             onClick={(e) => history.push('/contact-us')}
                         >
                             Contact us
                         </span>
                     </div>
-                    <div className="col-span-2 lg:hidden flex justify-items-stretch	 items-center">
+                    <div className="flex items-center col-span-2 lg:hidden justify-items-stretch">
                         <svg
-                            onClick={(e) => navbarToggleOpen()}
-                            className="col-span-1 lg:hidden w-8 h-8 cursor-pointer text-gray-600"
+                            onClick={(e) => navberToggleOpen()}
+                            className="w-8 h-8 col-span-1 text-gray-600 cursor-pointer lg:hidden"
                             fill="none"
                             stroke="currentColor"
                             viewBox="0 0 24 24"
@@ -70,23 +65,23 @@ const Navbar = (props) => {
                         <span
                             onClick={(e) => history.push('/')}
                             style={{ letterSpacing: '0.10rem' }}
-                            className="flex items-left text-center font-bold uppercase text-gray-800 text-2xl cursor-pointer px-2 text-center"
+                            className="flex px-2 text-2xl font-bold text-center text-gray-800 uppercase cursor-pointer items-left"
                         >
-                            Hayroo
+                            Blooms Bay
                         </span>
                     </div>
                     <div
                         onClick={(e) => history.push('/')}
                         style={{ letterSpacing: '0.70rem' }}
-                        className="hidden lg:block flex items-left col-span-1 text-center text-gray-800 font-bold tracking-widest uppercase text-2xl cursor-pointer"
+                        className="flex hidden col-span-1 text-2xl font-bold tracking-widest text-center text-gray-800 uppercase cursor-pointer lg:block items-left"
                     >
-                        Hayroo
+                        Blooms Bay
                     </div>
-                    <div className="flex items-right col-span-2 lg:col-span-1 flex justify-end">
+                    <div className="flex justify-end col-span-2 items-right lg:col-span-1">
                         {/*  WishList Page Button */}
                         <div
                             onClick={(e) => history.push('/wish-list')}
-                            className="hover:bg-gray-200 rounded-lg px-2 py-2 cursor-pointer"
+                            className="px-2 py-2 rounded-lg cursor-pointer hover:bg-gray-200"
                             title="Wishlist"
                         >
                             <svg
@@ -111,11 +106,11 @@ const Navbar = (props) => {
                         {localStorage.getItem('jwt') ? (
                             <Fragment>
                                 <div
-                                    className="userDropdownBtn hover:bg-gray-200 px-2 py-2 rounded-lg relative"
+                                    className="relative px-2 py-2 rounded-lg userDropdownBtn hover:bg-gray-200"
                                     title="Logout"
                                 >
                                     <svg
-                                        className="cursor-pointer w-8 h-8 text-gray-600 hover:text-gray-800"
+                                        className="w-8 h-8 text-gray-600 cursor-pointer hover:text-gray-800"
                                         fill="none"
                                         stroke="currentColor"
                                         viewBox="0 0 24 24"
@@ -128,17 +123,17 @@ const Navbar = (props) => {
                                             d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"
                                         />
                                     </svg>
-                                    <div className="userDropdown absolute right-0 mt-1 bg-gray-200 rounded">
+                                    <div className="absolute right-0 mt-1 bg-gray-200 rounded userDropdown">
                                         {!isAdmin() ? (
                                             <Fragment>
-                                                <li className="flex flex-col text-gray-700 w-48 shadow-lg">
+                                                <li className="flex flex-col w-48 text-gray-700 shadow-lg">
                                                     <span
                                                         onClick={(e) =>
                                                             history.push(
                                                                 '/user/orders'
                                                             )
                                                         }
-                                                        className="flex space-x-2 py-2 px-8 hover:bg-gray-400 cursor-pointer"
+                                                        className="flex px-8 py-2 space-x-2 cursor-pointer hover:bg-gray-400"
                                                     >
                                                         <span>
                                                             <svg
@@ -166,7 +161,7 @@ const Navbar = (props) => {
                                                                 '/user/profile'
                                                             )
                                                         }
-                                                        className="flex space-x-2 py-2 px-8 hover:bg-gray-400 cursor-pointer"
+                                                        className="flex px-8 py-2 space-x-2 cursor-pointer hover:bg-gray-400"
                                                     >
                                                         <span>
                                                             <svg
@@ -194,7 +189,7 @@ const Navbar = (props) => {
                                                                 '/wish-list'
                                                             )
                                                         }
-                                                        className="flex space-x-2 py-2 px-8 hover:bg-gray-400 cursor-pointer"
+                                                        className="flex px-8 py-2 space-x-2 cursor-pointer hover:bg-gray-400"
                                                     >
                                                         <span>
                                                             <svg
@@ -222,7 +217,7 @@ const Navbar = (props) => {
                                                                 '/user/setting'
                                                             )
                                                         }
-                                                        className="flex space-x-1 py-2 px-8 hover:bg-gray-400 cursor-pointer"
+                                                        className="flex px-8 py-2 space-x-1 cursor-pointer hover:bg-gray-400"
                                                     >
                                                         <span>
                                                             <svg
@@ -256,7 +251,7 @@ const Navbar = (props) => {
                                                         onClick={(e) =>
                                                             logout()
                                                         }
-                                                        className="flex space-x-2 py-2 px-8 hover:bg-gray-400 cursor-pointer"
+                                                        className="flex px-8 py-2 space-x-2 cursor-pointer hover:bg-gray-400"
                                                     >
                                                         <span>
                                                             <svg
@@ -282,14 +277,14 @@ const Navbar = (props) => {
                                             </Fragment>
                                         ) : (
                                             <Fragment>
-                                                <li className="flex flex-col text-gray-700 w-48 shadow-lg">
+                                                <li className="flex flex-col w-48 text-gray-700 shadow-lg">
                                                     <span
                                                         onClick={(e) =>
                                                             history.push(
                                                                 '/admin/dashboard'
                                                             )
                                                         }
-                                                        className="flex space-x-2 py-2 px-8 hover:bg-gray-400 cursor-pointer"
+                                                        className="flex px-8 py-2 space-x-2 cursor-pointer hover:bg-gray-400"
                                                     >
                                                         <span>
                                                             <svg
@@ -323,7 +318,7 @@ const Navbar = (props) => {
                                                         onClick={(e) =>
                                                             logout()
                                                         }
-                                                        className="flex space-x-2 py-2 px-8 hover:bg-gray-400 cursor-pointer"
+                                                        className="flex px-8 py-2 space-x-2 cursor-pointer hover:bg-gray-400"
                                                     >
                                                         <span>
                                                             <svg
@@ -355,7 +350,7 @@ const Navbar = (props) => {
                             /* Login Modal Button */
                             <div
                                 onClick={(e) => loginModalOpen()}
-                                className="cursor-pointer hover:bg-gray-200 px-2 py-2 rounded-lg"
+                                className="px-2 py-2 rounded-lg cursor-pointer hover:bg-gray-200"
                                 title="Login"
                             >
                                 <svg
@@ -377,7 +372,7 @@ const Navbar = (props) => {
                         {/* Cart Modal Button */}
                         <div
                             onClick={(e) => cartModalOpen()}
-                            className="hover:bg-gray-200 px-2 py-2 rounded-lg relative cursor-pointer"
+                            className="relative px-2 py-2 rounded-lg cursor-pointer hover:bg-gray-200"
                             title="Cart"
                         >
                             <svg
@@ -394,7 +389,7 @@ const Navbar = (props) => {
                                     d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
                                 />
                             </svg>
-                            <span className="absolute top-0 ml-6 mt-1 bg-yellow-700 rounded px-1 text-white text-xs hover:text-gray-200 font-semibold">
+                            <span className="absolute top-0 px-1 mt-1 ml-6 text-xs font-semibold text-white bg-yellow-700 rounded hover:text-gray-200">
                                 {data.cartProduct !== null
                                     ? data.cartProduct.length
                                     : 0}
@@ -404,26 +399,20 @@ const Navbar = (props) => {
                 </div>
                 <div
                     className={
-                        data.navbarHamburger && data.navbarHamburger
+                        data.navberHamburger && data.navberHamburger
                             ? 'px-1 pb-2 md:pb-0 md:px-10 lg:hidden'
                             : 'hidden px-1 pb-2 md:pb-0 md:px-10 lg:hidden'
                     }
                 >
-                    <div className="col-span-1 flex flex-col text-gray-600">
+                    <div className="flex flex-col col-span-1 text-gray-600">
                         <span
-                            className="font-medium text-lg tracking-widest hover:text-gray-800 hover:bg-gray-200 px-3 py-2 rounded-lg cursor-pointer"
+                            className="px-3 py-2 text-lg font-medium tracking-widest rounded-lg cursor-pointer hover:text-gray-800 hover:bg-gray-200"
                             onClick={(e) => history.push('/')}
                         >
                             Shop
                         </span>
                         <span
-                            className="font-medium text-lg tracking-widest hover:text-gray-800 hover:bg-gray-200 px-3 py-2 rounded-lg cursor-pointer"
-                            onClick={(e) => history.push('/blog')}
-                        >
-                            Blog
-                        </span>
-                        <span
-                            className="font-medium text-lg tracking-widest hover:text-gray-800 hover:bg-gray-200 px-3 py-2 rounded-lg cursor-pointer"
+                            className="px-3 py-2 text-lg font-medium tracking-widest rounded-lg cursor-pointer hover:text-gray-800 hover:bg-gray-200"
                             onClick={(e) => history.push('/contact-us')}
                         >
                             Contact us
@@ -431,9 +420,9 @@ const Navbar = (props) => {
                     </div>
                 </div>
             </nav>
-            {/* End Navbar Section */}
+            {/* End Navber Section */}
         </Fragment>
     )
 }
 
-export default Navbar
+export default Navber

@@ -1,7 +1,7 @@
 import moment from 'moment'
 import React, { Fragment, useContext, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { isAuthenticate } from '../auth/FetchApi'
+import { isAuthenticate } from '../auth/fetchApi'
 import { LayoutContext } from '../layout'
 import { Alert, deleteReview } from './Action'
 import { getSingleProduct } from './FetchApi'
@@ -123,10 +123,10 @@ const AllReviews = (props) => {
                                                     <span
                                                         onClick={(e) =>
                                                             deleteReview(
-                                                                item._id,
+                                                                item.product_id,
                                                                 data
                                                                     .singleProductDetail
-                                                                    ._id,
+                                                                    .product_id,
                                                                 fetchData,
                                                                 setFdata
                                                             )

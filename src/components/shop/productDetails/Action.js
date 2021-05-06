@@ -1,5 +1,5 @@
 import React from 'react'
-import { isAuthenticate } from '../auth/FetchApi'
+import { isAuthenticate } from '../auth/fetchApi'
 import { postAddReview, postDeleteReview } from './FetchApi'
 
 export const Alert = (color, text) => (
@@ -25,7 +25,7 @@ export const deleteReview = async (
     try {
         let responseData = await postDeleteReview({
             rId: reviewId,
-            pId: productId,
+            product_id: productId,
         })
         if (responseData.success) {
             fetchData()
@@ -42,7 +42,7 @@ export const addReview = async (fData, setFdata, fetchData) => {
     let formData = {
         rating: fData.rating,
         review: fData.review,
-        pId: fData.pId,
+        product_id: fData.product_id,
         user_id: JSON.parse(localStorage.getItem('jwt')).user.user_id,
     }
     try {

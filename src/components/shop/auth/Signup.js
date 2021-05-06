@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import { signupReq } from './FetchApi'
+import React, { Fragment, useState } from 'react'
+import { signupReq } from './fetchApi'
 
 const Signup = (props) => {
     const [data, setData] = useState({
@@ -58,7 +58,7 @@ const Signup = (props) => {
     }
 
     return (
-        <>
+        <Fragment>
             <div className="mb-6 text-2xl text-center">Register</div>
             <form className="space-y-4">
                 {data.success ? alert(data.success, 'green') : ''}
@@ -178,7 +178,7 @@ const Signup = (props) => {
                     Create an account
                 </div>
             </form>
-        </>
+        </Fragment>
     )
 }
 

@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 import { useHistory } from 'react-router-dom'
 
-const AdminNavbar = (props) => {
+const AdminNavber = (props) => {
     const history = useHistory()
 
     const logout = () => {
@@ -40,7 +40,7 @@ const AdminNavbar = (props) => {
                         style={{ letterSpacing: '0.70rem' }}
                         className="flex items-left text-center font-bold uppercase text-gray-800 text-2xl cursor-pointer px-2 text-center"
                     >
-                        Hayroo
+                        Blooms Bay
                     </span>
                 </div>
                 {/* Small Screen Show */}
@@ -65,7 +65,7 @@ const AdminNavbar = (props) => {
                         style={{ letterSpacing: '0.10rem' }}
                         className="flex items-left text-center font-bold uppercase text-gray-800 text-2xl cursor-pointer px-2 text-center"
                     >
-                        Hayroo
+                        Blooms Bay
                     </span>
                 </div>
                 {/* Both Screen show */}
@@ -202,11 +202,11 @@ const AdminNavbar = (props) => {
                         </div>
                     </div>
                 </div>
-                {/* Mobile Navbar */}
-                {/* End Mobile Navbar */}
+                {/* Mobile Navber */}
+                {/* End Mobile Navber */}
             </nav>
         </Fragment>
     )
 }
 
-export default AdminNavbar
+export default AdminNavber
