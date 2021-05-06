@@ -8,7 +8,7 @@ export const isAuthenticate = () =>
 
 export const isAdmin = () =>
     localStorage.getItem('jwt')
-        ? JSON.parse(localStorage.getItem('jwt')).user.role === 1
+        ? JSON.parse(localStorage.getItem('jwt')).user.user_id === 1
         : false
 
 export const loginReq = async ({ email, password }) => {
