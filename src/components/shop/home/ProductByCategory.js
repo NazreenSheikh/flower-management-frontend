@@ -66,7 +66,7 @@ const AllProduct = ({ products }) => {
                                             )
                                         }
                                         className="w-full object-cover object-center cursor-pointer"
-                                        src={`${apiURL}/uploads/products/${item.pImages[0]}`}
+                                        src={`${apiURL}/uploads/products/${item.pImage}`}
                                         alt=""
                                     />
                                     <div className="flex items-center justify-between mt-2">

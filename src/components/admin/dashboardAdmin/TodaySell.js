@@ -29,12 +29,12 @@ const SellTable = () => {
 
   return (
     <Fragment>
-      <div className="col-span-1 overflow-auto bg-white shadow-lg p-4">
-        <div className="text-2xl font-semibold mb-6 text-center">
+      <div className="col-span-1 p-4 overflow-auto bg-white shadow-lg">
+        <div className="mb-6 text-2xl font-semibold text-center">
           Today's Orders{" "}
           {data.totalOrders.Orders !== undefined ? ordersList().length : 0}
         </div>
-        <table className="table-auto border w-full my-2">
+        <table className="w-full my-2 border table-auto">
           <thead>
             <tr>
               <th className="px-4 py-2 border">Products</th>
@@ -53,7 +53,7 @@ const SellTable = () => {
               <tr>
                 <td
                   colSpan="5"
-                  className="text-xl text-center font-semibold py-8"
+                  className="py-8 text-xl font-semibold text-center"
                 >
                   No orders found today
                 </td>
@@ -61,7 +61,7 @@ const SellTable = () => {
             )}
           </tbody>
         </table>
-        <div className="text-sm text-gray-600 mt-2">
+        <div className="mt-2 text-sm text-gray-600">
           Total{" "}
           {data.totalOrders.Orders !== undefined ? ordersList().length : 0}{" "}
           orders found
@@ -70,7 +70,7 @@ const SellTable = () => {
           <span
             onClick={(e) => history.push("/admin/dashboard/orders")}
             style={{ background: "#303031" }}
-            className="cursor-pointer px-4 py-2 text-white rounded-full"
+            className="px-4 py-2 text-white rounded-full cursor-pointer"
           >
             View All
           </span>
@@ -84,7 +84,7 @@ const TodayOrderTable = ({ order }) => {
   return (
     <Fragment>
       <tr>
-        <td className="w-48 hover:bg-gray-200 p-2 flex flex-col space-y-1">
+        <td className="flex flex-col w-48 p-2 space-y-1 hover:bg-gray-200">
           {order.allProduct.map((item, index) => {
             return (
               <div key={index} className="flex space-x-2">
@@ -99,8 +99,8 @@ const TodayOrderTable = ({ order }) => {
             return (
               <img
                 key={index}
-                className="w-12 h-12 object-cover"
-                src={`${apiURL}/uploads/products/${item.id.pImages[0]}`}
+                className="object-cover w-12 h-12"
+                src={`${apiURL}/uploads/products/${item.product_id.pImage}`}
                 alt="Pic"
               />
             );
@@ -108,27 +108,27 @@ const TodayOrderTable = ({ order }) => {
         </td>
         <td className="p-2 text-center">
           {order.status === "Not processed" && (
-            <span className="block text-red-600 rounded-full text-center text-xs px-2 font-semibold">
+            <span className="block px-2 text-xs font-semibold text-center text-red-600 rounded-full">
               {order.status}
             </span>
           )}
           {order.status === "Processing" && (
-            <span className="block text-yellow-600 rounded-full text-center text-xs px-2 font-semibold">
+            <span className="block px-2 text-xs font-semibold text-center text-yellow-600 rounded-full">
               {order.status}
             </span>
           )}
           {order.status === "Shipped" && (
-            <span className="block text-blue-600 rounded-full text-center text-xs px-2 font-semibold">
+            <span className="block px-2 text-xs font-semibold text-center text-blue-600 rounded-full">
               {order.status}
             </span>
           )}
           {order.status === "Delivered" && (
-            <span className="block text-green-600 rounded-full text-center text-xs px-2 font-semibold">
+            <span className="block px-2 text-xs font-semibold text-center text-green-600 rounded-full">
               {order.status}
             </span>
           )}
           {order.status === "Cancelled" && (
-            <span className="block text-red-600 rounded-full text-center text-xs px-2 font-semibold">
+            <span className="block px-2 text-xs font-semibold text-center text-red-600 rounded-full">
               {order.status}
             </span>
           )}

@@ -104,7 +104,7 @@ const CartModal = (props) => {
                                             <div className="flex items-center my-4 space-x-2 text-white">
                                                 <img
                                                     className="object-cover object-center w-16 h-16"
-                                                    src={`${apiURL}/uploads/products/${item.pImages[0]}`}
+                                                    src={`${apiURL}/uploads/products/${item.pImage}`}
                                                     alt="cartProduct"
                                                 />
                                                 <div className="relative flex flex-col w-full">

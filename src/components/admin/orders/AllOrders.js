@@ -106,7 +106,7 @@ const CategoryTable = ({ order, editOrder }) => {
                             >
                                 <img
                                     className="object-cover object-center w-8 h-8"
-                                    src={`${apiURL}/uploads/products/${product.id.pImages[0]}`}
+                                    src={`${apiURL}/uploads/products/${product.id.pImage}`}
                                     alt="productImage"
                                 />
                                 <span>{product.id.pName}</span>

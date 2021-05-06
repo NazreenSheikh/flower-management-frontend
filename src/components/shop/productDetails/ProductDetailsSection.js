@@ -120,7 +120,7 @@ const ProductDetailsSection = (props) => {
                             className={`${
                                 count === 0 ? '' : 'opacity-25'
                             } cursor-pointer w-20 h-20 object-cover object-center`}
-                            src={`${apiURL}/uploads/products/${sProduct.pImages[0]}`}
+                            src={`${apiURL}/uploads/products/${sProduct.pImage}`}
                             alt="pic"
                         />
                         <img
