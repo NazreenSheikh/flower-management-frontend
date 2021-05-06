@@ -217,8 +217,10 @@ const ProductDetailsSection = (props) => {
                                             )
                                         }
                                         className={`${
-                                            isWish(sProduct._id, wList) &&
-                                            'hidden'
+                                            isWish(
+                                                sProduct.product_id,
+                                                wList
+                                            ) && 'hidden'
                                         } w-5 h-5 md:w-6 md:h-6 cursor-pointer text-yellow-700`}
                                         fill="none"
                                         stroke="currentColor"
@@ -234,11 +236,17 @@ const ProductDetailsSection = (props) => {
                                     </svg>
                                     <svg
                                         onClick={(e) =>
-                                            unWishReq(e, sProduct._id, setWlist)
+                                            unWishReq(
+                                                e,
+                                                sProduct.product_id,
+                                                setWlist
+                                            )
                                         }
                                         className={`${
-                                            !isWish(sProduct._id, wList) &&
-                                            'hidden'
+                                            !isWish(
+                                                sProduct.product_id,
+                                                wList
+                                            ) && 'hidden'
                                         } w-5 h-5 md:w-6 md:h-6 cursor-pointer text-yellow-700`}
                                         fill="currentColor"
                                         viewBox="0 0 20 20"
@@ -284,7 +292,7 @@ const ProductDetailsSection = (props) => {
                                         {layoutData.inCart == null ||
                                         (layoutData.inCart !== null &&
                                             layoutData.inCart.includes(
-                                                sProduct._id
+                                                sProduct.product_id
                                             ) === false) ? (
                                             <div className="flex items-center space-x-2">
                                                 <span
@@ -416,8 +424,9 @@ const ProductDetailsSection = (props) => {
                             {sProduct.pQuantity !== 0 ? (
                                 <Fragment>
                                     {layoutData.inCart !== null &&
-                                    layoutData.inCart.includes(sProduct._id) ===
-                                        true ? (
+                                    layoutData.inCart.includes(
+                                        sProduct.product_id
+                                    ) === true ? (
                                         <div
                                             style={{ background: '#303031' }}
                                             className={`px-4 py-2 text-white text-center cursor-not-allowed uppercase opacity-75`}
@@ -428,7 +437,7 @@ const ProductDetailsSection = (props) => {
                                         <div
                                             onClick={(e) =>
                                                 addToCart(
-                                                    sProduct._id,
+                                                    sProduct.product_id,
                                                     quantitiy,
                                                     sProduct.pPrice,
                                                     layoutDispatch,
@@ -448,8 +457,9 @@ const ProductDetailsSection = (props) => {
                             ) : (
                                 <Fragment>
                                     {layoutData.inCart !== null &&
-                                    layoutData.inCart.includes(sProduct._id) ===
-                                        true ? (
+                                    layoutData.inCart.includes(
+                                        sProduct.product_id
+                                    ) === true ? (
                                         <div
                                             style={{ background: '#303031' }}
                                             className={`px-4 py-2 text-white text-center cursor-not-allowed uppercase opacity-75`}

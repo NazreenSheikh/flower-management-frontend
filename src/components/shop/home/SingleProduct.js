@@ -113,7 +113,8 @@ const SingleProduct = (props) => {
                                             )
                                         }
                                         className={`${
-                                            isWish(item._id, wList) && 'hidden'
+                                            isWish(item.product_id, wList) &&
+                                            'hidden'
                                         } w-5 h-5 md:w-6 md:h-6 cursor-pointer text-yellow-700 transition-all duration-300 ease-in`}
                                         fill="none"
                                         stroke="currentColor"
@@ -129,10 +130,15 @@ const SingleProduct = (props) => {
                                     </svg>
                                     <svg
                                         onClick={(e) =>
-                                            unWishReq(e, item._id, setWlist)
+                                            unWishReq(
+                                                e,
+                                                item.product_id,
+                                                setWlist
+                                            )
                                         }
                                         className={`${
-                                            !isWish(item._id, wList) && 'hidden'
+                                            !isWish(item.product_id, wList) &&
+                                            'hidden'
                                         } w-5 h-5 md:w-6 md:h-6 cursor-pointer text-yellow-700 transition-all duration-300 ease-in`}
                                         fill="currentColor"
                                         viewBox="0 0 20 20"

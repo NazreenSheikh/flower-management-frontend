@@ -23,7 +23,6 @@ const EditProductModal = (props) => {
         pCategory: '',
         pQuantity: '',
         pPrice: '',
-        pOffer: '',
         error: false,
         success: false,
     })
@@ -49,7 +48,6 @@ const EditProductModal = (props) => {
             pCategory: data.editProductModal.pCategory,
             pQuantity: data.editProductModal.pQuantity,
             pPrice: data.editProductModal.pPrice,
-            pOffer: data.editProductModal.pOffer,
         })
     }, [data.editProductModal])
 
@@ -117,9 +115,9 @@ const EditProductModal = (props) => {
                     data.editProductModal.modal ? '' : 'hidden'
                 } fixed inset-0 flex items-center z-30 justify-center overflow-auto`}
             >
-                <div className="mt-32 md:mt-0 relative bg-white w-11/12 md:w-3/6 shadow-lg flex flex-col items-center space-y-4 px-4 py-4 md:px-8">
+                <div className="relative flex flex-col items-center w-11/12 px-4 py-4 mt-32 space-y-4 bg-white shadow-lg md:mt-0 md:w-3/6 md:px-8">
                     <div className="flex items-center justify-between w-full pt-4">
-                        <span className="text-left font-semibold text-2xl tracking-wider">
+                        <span className="text-2xl font-semibold tracking-wider text-left">
                             Edit Product
                         </span>
                         {/* Close Modal */}
@@ -131,7 +129,7 @@ const EditProductModal = (props) => {
                                     payload: false,
                                 })
                             }
-                            className="cursor-pointer text-gray-100 py-2 px-2 rounded-full"
+                            className="px-2 py-2 text-gray-100 rounded-full cursor-pointer"
                         >
                             <svg
                                 className="w-6 h-6"
@@ -154,8 +152,8 @@ const EditProductModal = (props) => {
                         ? alert(editformData.success, 'green')
                         : ''}
                     <form className="w-full" onSubmit={(e) => submitForm(e)}>
-                        <div className="flex space-x-1 py-4">
-                            <div className="w-1/2 flex flex-col space-y-1 space-x-1">
+                        <div className="flex py-4 space-x-1">
+                            <div className="flex flex-col w-1/2 space-x-1 space-y-1">
                                 <label htmlFor="name">Product Name *</label>
                                 <input
                                     value={editformData.pName}
@@ -171,7 +169,7 @@ const EditProductModal = (props) => {
                                     type="text"
                                 />
                             </div>
-                            <div className="w-1/2 flex flex-col space-y-1 space-x-1">
+                            <div className="flex flex-col w-1/2 space-x-1 space-y-1">
                                 <label htmlFor="price">Product Price *</label>
                                 <input
                                     value={editformData.pPrice}
@@ -216,12 +214,12 @@ const EditProductModal = (props) => {
                             {editformData.pImages ? (
                                 <div className="flex space-x-1">
                                     <img
-                                        className="h-16 w-16 object-cover"
+                                        className="object-cover w-16 h-16"
                                         src={`${apiURL}/uploads/products/${editformData.pImages[0]}`}
                                         alt="productImage"
                                     />
                                     <img
-                                        className="h-16 w-16 object-cover"
+                                        className="object-cover w-16 h-16"
                                         src={`${apiURL}/uploads/products/${editformData.pImages[1]}`}
                                         alt="productImage"
                                     />
@@ -229,7 +227,7 @@ const EditProductModal = (props) => {
                             ) : (
                                 ''
                             )}
-                            <span className="text-gray-600 text-xs">
+                            <span className="text-xs text-gray-600">
                                 Must need 2 images
                             </span>
                             <input
@@ -249,8 +247,8 @@ const EditProductModal = (props) => {
                             />
                         </div>
                         {/* Most Important part for uploading multiple image */}
-                        <div className="flex space-x-1 py-4">
-                            <div className="w-1/2 flex flex-col space-y-1">
+                        <div className="flex py-4 space-x-1">
+                            <div className="flex flex-col w-1/2 space-y-1">
                                 <label htmlFor="status">Product Status *</label>
                                 <select
                                     value={editformData.pStatus}
@@ -274,7 +272,7 @@ const EditProductModal = (props) => {
                                     </option>
                                 </select>
                             </div>
-                            <div className="w-1/2 flex flex-col space-y-1">
+                            <div className="flex flex-col w-1/2 space-y-1">
                                 <label htmlFor="status">
                                     Product Category *
                                 </label>
@@ -297,15 +295,22 @@ const EditProductModal = (props) => {
                                     {categories && categories.length > 0
                                         ? categories.map((elem) => {
                                               return (
-                                                  <Fragment key={elem._id}>
+                                                  <Fragment
+                                                      key={elem.category_id}
+                                                  >
                                                       {editformData.pCategory
-                                                          ._id &&
+                                                          .category_id &&
                                                       editformData.pCategory
-                                                          ._id === elem._id ? (
+                                                          .category_id ===
+                                                          elem.category_id ? (
                                                           <option
                                                               name="status"
-                                                              value={elem._id}
-                                                              key={elem._id}
+                                                              value={
+                                                                  elem.category_id
+                                                              }
+                                                              key={
+                                                                  elem.category_id
+                                                              }
                                                               selected
                                                           >
                                                               {elem.cName}
@@ -313,8 +318,12 @@ const EditProductModal = (props) => {
                                                       ) : (
                                                           <option
                                                               name="status"
-                                                              value={elem._id}
-                                                              key={elem._id}
+                                                              value={
+                                                                  elem.category_id
+                                                              }
+                                                              key={
+                                                                  elem.category_id
+                                                              }
                                                           >
                                                               {elem.cName}
                                                           </option>
@@ -326,8 +335,8 @@ const EditProductModal = (props) => {
                                 </select>
                             </div>
                         </div>
-                        <div className="flex space-x-1 py-4">
-                            <div className="w-1/2 flex flex-col space-y-1">
+                        <div className="flex py-4 space-x-1">
+                            <div className="flex flex-col w-1/2 space-y-1">
                                 <label htmlFor="quantity">
                                     Product in Stock *
                                 </label>
@@ -346,7 +355,7 @@ const EditProductModal = (props) => {
                                     id="quantity"
                                 />
                             </div>
-                            <div className="w-1/2 flex flex-col space-y-1">
+                            <div className="flex flex-col w-1/2 space-y-1">
                                 <label htmlFor="offer">
                                     Product Offfer (%) *
                                 </label>
@@ -366,11 +375,11 @@ const EditProductModal = (props) => {
                                 />
                             </div>
                         </div>
-                        <div className="flex flex-col space-y-1 w-full pb-4 md:pb-6 mt-4">
+                        <div className="flex flex-col w-full pb-4 mt-4 space-y-1 md:pb-6">
                             <button
                                 style={{ background: '#303031' }}
                                 type="submit"
-                                className="rounded-full bg-gray-800 text-gray-100 text-lg font-medium py-2"
+                                className="py-2 text-lg font-medium text-gray-100 bg-gray-800 rounded-full"
                             >
                                 Update product
                             </button>

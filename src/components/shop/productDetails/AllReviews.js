@@ -123,10 +123,10 @@ const AllReviews = (props) => {
                                                     <span
                                                         onClick={(e) =>
                                                             deleteReview(
-                                                                item._id,
+                                                                item.product_id,
                                                                 data
                                                                     .singleProductDetail
-                                                                    ._id,
+                                                                    .product_id,
                                                                 fetchData,
                                                                 setFdata
                                                             )

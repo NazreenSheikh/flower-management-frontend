@@ -174,7 +174,9 @@ const ProductTable = ({ product, deleteProduct, editProduct }) => {
                 </td>
                 <td className="p-2 flex items-center justify-center">
                     <span
-                        onClick={(e) => editProduct(product._id, product, true)}
+                        onClick={(e) =>
+                            editProduct(product.product_id, product, true)
+                        }
                         className="cursor-pointer hover:bg-gray-200 rounded-lg p-2 mx-1"
                     >
                         <svg
@@ -192,7 +194,7 @@ const ProductTable = ({ product, deleteProduct, editProduct }) => {
                         </svg>
                     </span>
                     <span
-                        onClick={(e) => deleteProduct(product._id)}
+                        onClick={(e) => deleteProduct(product.product_id)}
                         className="cursor-pointer hover:bg-gray-200 rounded-lg p-2 mx-1"
                     >
                         <svg
