@@ -22,7 +22,6 @@ const ProfileComponent = () => {
             email: userDetails.email,
             phone: userDetails.phoneNumber,
         })
-        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [userDetails])
 
     const handleSubmit = () => {

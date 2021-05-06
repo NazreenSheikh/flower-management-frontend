@@ -11,7 +11,6 @@ const AllCategory = (props) => {
 
     useEffect(() => {
         fetchData(dispatch)
-        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     if (loading) {
