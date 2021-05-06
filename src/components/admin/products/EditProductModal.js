@@ -220,7 +220,7 @@ const EditProductModal = (props) => {
                                     />
                                     <img
                                         className="object-cover w-16 h-16"
-                                        src={`${apiURL}/uploads/products/${editformData.pImages[1]}`}
+                                        src={`${apiURL}/uploads/products/${editformData.pImage}`}
                                         alt="productImage"
                                     />
                                 </div>

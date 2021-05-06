@@ -45,7 +45,7 @@ const ProductDetailsSection = (props) => {
                         type: 'singleProductDetail',
                         payload: responseData.Product,
                     }) // Dispatch in layout context
-                    setPimages(responseData.Product.pImages)
+                    setPimages(responseData.Product.pImage)
                     dispatch({ type: 'loading', payload: false })
                     layoutDispatch({ type: 'inCart', payload: cartList() }) // This function change cart in cart state
                 }
@@ -99,7 +99,7 @@ const ProductDetailsSection = (props) => {
         <Fragment>
             <Submenu
                 value={{
-                    categoryId: sProduct.pcategory.category_id,
+                    categoryId: sProduct.category_id,
                     product: sProduct.pName,
                     category: sProduct.pCategory.cName,
                 }}
@@ -136,7 +136,7 @@ const ProductDetailsSection = (props) => {
                             className={`${
                                 count === 1 ? '' : 'opacity-25'
                             } cursor-pointer w-20 h-20 object-cover object-center`}
-                            src={`${apiURL}/uploads/products/${sProduct.pImages[1]}`}
+                            src={`${apiURL}/uploads/products/${sProduct.pImage}`}
                             alt="pic"
                         />
                     </div>
@@ -144,7 +144,7 @@ const ProductDetailsSection = (props) => {
                         <div className="relative">
                             <img
                                 className="w-full"
-                                src={`${apiURL}/uploads/products/${sProduct.pImages[count]}`}
+                                src={`${apiURL}/uploads/products/${sProduct.pImage}`}
                                 alt="Pic"
                             />
                             <div className="absolute inset-0 flex items-center justify-between mb-4">
