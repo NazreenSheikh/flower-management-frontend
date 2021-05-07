@@ -11,10 +11,10 @@ const Submenu = ({ category }) => {
         <Fragment>
             {/* Submenu Section */}
             <section className="mx-4 mt-24 md:mx-12 md:mt-32 lg:mt-24">
-                <div className="flex justify-between items-center">
-                    <div className="text-sm flex space-x-3">
+                <div className="flex items-center justify-between">
+                    <div className="flex space-x-3 text-sm">
                         <span
-                            className="hover:text-yellow-700 cursor-pointer"
+                            className="cursor-pointer hover:text-yellow-700"
                             onClick={(e) => history.push('/')}
                         >
                             Shop
@@ -53,7 +53,7 @@ const AllProduct = ({ products }) => {
     return (
         <Fragment>
             <Submenu category={category} />
-            <section className="m-4 md:mx-8 md:my-4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+            <section className="grid grid-cols-2 m-4 md:mx-8 md:my-4 md:grid-cols-3 lg:grid-cols-4">
                 {products && products.length > 0 ? (
                     products.map((item, index) => {
                         return (
@@ -65,18 +65,18 @@ const AllProduct = ({ products }) => {
                                                 `/products/${item.product_id}`
                                             )
                                         }
-                                        className="w-full object-cover object-center cursor-pointer"
+                                        className="object-cover object-center w-full cursor-pointer"
                                         src={`${apiURL}/uploads/products/${item.pImage}`}
                                         alt=""
                                     />
                                     <div className="flex items-center justify-between mt-2">
-                                        <div className="text-gray-600 font-light truncate">
+                                        <div className="font-light text-gray-600 truncate">
                                             {item.pName}
                                         </div>
                                         <div className="flex items-center space-x-1">
                                             <span>
                                                 <svg
-                                                    className="w-4 h-4 fill-current text-yellow-700"
+                                                    className="w-4 h-4 text-yellow-700 fill-current"
                                                     fill="none"
                                                     stroke="currentColor"
                                                     viewBox="0 0 24 24"
@@ -100,7 +100,7 @@ const AllProduct = ({ products }) => {
                                     <div>{item.pPrice}.00$</div>
                                     <div className="absolute top-0 right-0 mx-2 my-2 md:mx-4">
                                         <svg
-                                            className="w-5 h-5 md:w-6 md:h-6 cursor-pointer text-yellow-700"
+                                            className="w-5 h-5 text-yellow-700 cursor-pointer md:w-6 md:h-6"
                                             fill="none"
                                             stroke="currentColor"
                                             viewBox="0 0 24 24"
@@ -119,7 +119,7 @@ const AllProduct = ({ products }) => {
                         )
                     })
                 ) : (
-                    <div className="col-span-2 md:col-span-3 lg:col-span-4 flex items-center justify-center py-24 text-2xl">
+                    <div className="flex items-center justify-center col-span-2 py-24 text-2xl md:col-span-3 lg:col-span-4">
                         No product found
                     </div>
                 )}

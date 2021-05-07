@@ -96,12 +96,12 @@ export const deleteProduct = async (product_id) => {
     }
 }
 
-export const productByCategory = async (catId) => {
+export const productByCategory = async (category_id) => {
     try {
         let res = await axios.post(
             `${apiURL}/api/product/product-by-category`,
             {
-                catId,
+                category_id,
             }
         )
         return res.data
