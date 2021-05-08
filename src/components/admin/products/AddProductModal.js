@@ -40,7 +40,7 @@ const AddProductDetail = ({ categories }) => {
         e.target.reset()
 
         if (!fData.pImage) {
-            setFdata({ ...fData, error: 'Please upload at least 2 image' })
+            setFdata({ ...fData, error: 'Please upload an image' })
             setTimeout(() => {
                 setFdata({ ...fData, error: false })
             }, 2000)
@@ -112,9 +112,9 @@ const AddProductDetail = ({ categories }) => {
                     data.addProductModal ? '' : 'hidden'
                 } fixed inset-0 flex items-center z-30 justify-center overflow-auto`}
             >
-                <div className="mt-32 md:mt-0 relative bg-white w-11/12 md:w-3/6 shadow-lg flex flex-col items-center space-y-4 px-4 py-4 md:px-8">
+                <div className="relative flex flex-col items-center w-11/12 px-4 py-4 mt-32 space-y-4 bg-white shadow-lg md:mt-0 md:w-3/6 md:px-8">
                     <div className="flex items-center justify-between w-full pt-4">
-                        <span className="text-left font-semibold text-2xl tracking-wider">
+                        <span className="text-2xl font-semibold tracking-wider text-left">
                             Add Product
                         </span>
                         {/* Close Modal */}
@@ -126,7 +126,7 @@ const AddProductDetail = ({ categories }) => {
                                     payload: false,
                                 })
                             }
-                            className="cursor-pointer text-gray-100 py-2 px-2 rounded-full"
+                            className="px-2 py-2 text-gray-100 rounded-full cursor-pointer"
                         >
                             <svg
                                 className="w-6 h-6"
@@ -147,8 +147,8 @@ const AddProductDetail = ({ categories }) => {
                     {fData.error ? alert(fData.error, 'red') : ''}
                     {fData.success ? alert(fData.success, 'green') : ''}
                     <form className="w-full" onSubmit={(e) => submitForm(e)}>
-                        <div className="flex space-x-1 py-4">
-                            <div className="w-1/2 flex flex-col space-y-1 space-x-1">
+                        <div className="flex py-4 space-x-1">
+                            <div className="flex flex-col w-1/2 space-x-1 space-y-1">
                                 <label htmlFor="name">Product Name *</label>
                                 <input
                                     value={fData.pName}
@@ -164,7 +164,7 @@ const AddProductDetail = ({ categories }) => {
                                     type="text"
                                 />
                             </div>
-                            <div className="w-1/2 flex flex-col space-y-1 space-x-1">
+                            <div className="flex flex-col w-1/2 space-x-1 space-y-1">
                                 <label htmlFor="price">Product Price *</label>
                                 <input
                                     value={fData.pPrice}
@@ -206,9 +206,6 @@ const AddProductDetail = ({ categories }) => {
                         {/* Most Important part for uploading multiple image */}
                         <div className="flex flex-col mt-4">
                             <label htmlFor="image">Product Images *</label>
-                            <span className="text-gray-600 text-xs">
-                                Must need 2 images
-                            </span>
                             <input
                                 onChange={(e) =>
                                     setFdata({
@@ -226,8 +223,8 @@ const AddProductDetail = ({ categories }) => {
                             />
                         </div>
                         {/* Most Important part for uploading multiple image */}
-                        <div className="flex space-x-1 py-4">
-                            <div className="w-1/2 flex flex-col space-y-1">
+                        <div className="flex py-4 space-x-1">
+                            <div className="flex flex-col w-1/2 space-y-1">
                                 <label htmlFor="status">Product Status *</label>
                                 <select
                                     value={fData.pStatus}
@@ -251,7 +248,7 @@ const AddProductDetail = ({ categories }) => {
                                     </option>
                                 </select>
                             </div>
-                            <div className="w-1/2 flex flex-col space-y-1">
+                            <div className="flex flex-col w-1/2 space-y-1">
                                 <label htmlFor="status">
                                     Product Category *
                                 </label>
@@ -277,7 +274,7 @@ const AddProductDetail = ({ categories }) => {
                                               return (
                                                   <option
                                                       name="status"
-                                                      value={elem.category_id}
+                                                      value={elem.cName}
                                                       key={elem.category_id}
                                                   >
                                                       {elem.cName}
@@ -288,8 +285,8 @@ const AddProductDetail = ({ categories }) => {
                                 </select>
                             </div>
                         </div>
-                        <div className="flex space-x-1 py-4">
-                            <div className="w-1/2 flex flex-col space-y-1">
+                        <div className="flex py-4 space-x-1">
+                            <div className="flex flex-col w-1/2 space-y-1">
                                 <label htmlFor="quantity">
                                     Product in Stock *
                                 </label>
@@ -308,7 +305,7 @@ const AddProductDetail = ({ categories }) => {
                                     id="quantity"
                                 />
                             </div>
-                            <div className="w-1/2 flex flex-col space-y-1">
+                            <div className="flex flex-col w-1/2 space-y-1">
                                 <label htmlFor="offer">
                                     Product Offfer (%) *
                                 </label>
@@ -328,11 +325,11 @@ const AddProductDetail = ({ categories }) => {
                                 />
                             </div>
                         </div>
-                        <div className="flex flex-col space-y-1 w-full pb-4 md:pb-6 mt-4">
+                        <div className="flex flex-col w-full pb-4 mt-4 space-y-1 md:pb-6">
                             <button
                                 style={{ background: '#303031' }}
                                 type="submit"
-                                className="rounded-full bg-gray-800 text-gray-100 text-lg font-medium py-2"
+                                className="py-2 text-lg font-medium text-gray-100 bg-gray-800 rounded-full"
                             >
                                 Create product
                             </button>
