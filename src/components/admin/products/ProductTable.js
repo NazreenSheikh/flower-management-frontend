@@ -138,7 +138,7 @@ const ProductTable = ({ product, deleteProduct, editProduct }) => {
             <tr>
                 <td className="p-2 text-left">
                     {product.pName.length > 15
-                        ? product.pDescription.substring(1, 15) + '...'
+                        ? product.pName.substring(0, 15) + '...'
                         : product.pName}
                 </td>
                 <td className="p-2 text-left">
