@@ -49,6 +49,7 @@ export const pay = async (
         setState({ ...state, error: 'Please provide your phone number' })
     } else {
         let nonce
+        // eslint-disable-next-line no-unused-vars
         let getNonce = state.instance
             .requestPaymentMethod()
             .then((data) => {

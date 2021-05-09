@@ -8,6 +8,7 @@ import './style.css'
 
 const Menu = () => {
     const { data, dispatch } = useContext(ProductDetailsContext)
+    // eslint-disable-next-line no-unused-vars
     const { data: layoutData } = useContext(LayoutContext)
 
     return (
