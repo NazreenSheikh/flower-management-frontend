@@ -58,9 +58,9 @@ export const editProduct = async (product) => {
     console.log(product)
     /* Most important part for updating multiple image  */
     let formData = new FormData()
-    if (product.pEditImages) {
-        for (const file of product.pEditImages) {
-            formData.append('pEditImages', file)
+    if (product.pEditImage) {
+        for (const file of product.pEditImage) {
+            formData.append('pImapEditImagege', file)
         }
     }
     /* Most important part for updating multiple image  */
@@ -68,11 +68,9 @@ export const editProduct = async (product) => {
     formData.append('pName', product.pName)
     formData.append('pDescription', product.pDescription)
     formData.append('pStatus', product.pStatus)
-    formData.append('pCategory', product.pcategory.category_id)
+    formData.append('pCategory', product.pCategory)
     formData.append('pQuantity', product.pQuantity)
     formData.append('pPrice', product.pPrice)
-    formData.append('pOffer', product.pOffer)
-    formData.append('pImages', product.pImages)
 
     try {
         let res = await axios.post(

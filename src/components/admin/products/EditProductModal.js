@@ -18,7 +18,7 @@ const EditProductModal = (props) => {
         pName: '',
         pDescription: '',
         pImages: null,
-        pEditImages: null,
+        pEditImage: null,
         pStatus: '',
         pCategory: '',
         pQuantity: '',
@@ -63,7 +63,7 @@ const EditProductModal = (props) => {
 
     const submitForm = async (e) => {
         e.preventDefault()
-        if (!editformData.pEditImages) {
+        if (!editformData.pEditImage) {
             console.log('Image Not upload=============', editformData)
         } else {
             console.log('Image uploading')
@@ -233,7 +233,7 @@ const EditProductModal = (props) => {
                                         ...editformData,
                                         error: false,
                                         success: false,
-                                        pEditImages: [...e.target.files],
+                                        pEditImage: [...e.target.files],
                                     })
                                 }
                                 type="file"

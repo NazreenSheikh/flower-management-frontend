@@ -53,7 +53,7 @@ const AllProduct = (props) => {
         return (
             <div className="flex items-center justify-center p-8">
                 <svg
-                    className="w-12 h-12 animate-spin text-gray-600"
+                    className="w-12 h-12 text-gray-600 animate-spin"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -72,8 +72,8 @@ const AllProduct = (props) => {
 
     return (
         <Fragment>
-            <div className="col-span-1 overflow-auto bg-white shadow-lg p-4">
-                <table className="table-auto border w-full my-2">
+            <div className="col-span-1 p-4 overflow-auto bg-white shadow-lg">
+                <table className="w-full my-2 border table-auto">
                     <thead>
                         <tr>
                             <th className="px-4 py-2 border">Product</th>
@@ -82,7 +82,6 @@ const AllProduct = (props) => {
                             <th className="px-4 py-2 border">Status</th>
                             <th className="px-4 py-2 border">Stock</th>
                             <th className="px-4 py-2 border">Category</th>
-                            <th className="px-4 py-2 border">Offer</th>
                             <th className="px-4 py-2 border">Created at</th>
                             <th className="px-4 py-2 border">Updated at</th>
                             <th className="px-4 py-2 border">Actions</th>
@@ -116,7 +115,7 @@ const AllProduct = (props) => {
                             <tr>
                                 <td
                                     colSpan="10"
-                                    className="text-xl text-center font-semibold py-8"
+                                    className="py-8 text-xl font-semibold text-center"
                                 >
                                     No product found
                                 </td>
@@ -124,7 +123,7 @@ const AllProduct = (props) => {
                         )}
                     </tbody>
                 </table>
-                <div className="text-sm text-gray-600 mt-2">
+                <div className="mt-2 text-sm text-gray-600">
                     Total {products && products.length} product found
                 </div>
             </div>
@@ -147,40 +146,39 @@ const ProductTable = ({ product, deleteProduct, editProduct }) => {
                 </td>
                 <td className="p-2 text-center">
                     <img
-                        className="w-12 h-12 object-cover object-center"
+                        className="object-cover object-center w-12 h-12"
                         src={`${apiURL}/uploads/products/${product.pImage}`}
                         alt="pic"
                     />
                 </td>
                 <td className="p-2 text-center">
                     {product.pStatus === 'Active' ? (
-                        <span className="bg-green-200 rounded-full text-center text-xs px-2 font-semibold">
+                        <span className="px-2 text-xs font-semibold text-center bg-green-200 rounded-full">
                             {product.pStatus}
                         </span>
                     ) : (
-                        <span className="bg-red-200 rounded-full text-center text-xs px-2 font-semibold">
+                        <span className="px-2 text-xs font-semibold text-center bg-red-200 rounded-full">
                             {product.pStatus}
                         </span>
                     )}
                 </td>
                 <td className="p-2 text-center">{product.pQuantity}</td>
-                <td className="p-2 text-center">{product.pCategory.cName}</td>
-                <td className="p-2 text-center">{product.pOffer}</td>
+                <td className="p-2 text-center">{product.pCategory}</td>
                 <td className="p-2 text-center">
                     {moment(product.createdAt).format('lll')}
                 </td>
                 <td className="p-2 text-center">
                     {moment(product.updatedAt).format('lll')}
                 </td>
-                <td className="p-2 flex items-center justify-center">
+                <td className="flex items-center justify-center p-2">
                     <span
                         onClick={(e) =>
                             editProduct(product.product_id, product, true)
                         }
-                        className="cursor-pointer hover:bg-gray-200 rounded-lg p-2 mx-1"
+                        className="p-2 mx-1 rounded-lg cursor-pointer hover:bg-gray-200"
                     >
                         <svg
-                            className="w-6 h-6 fill-current text-green-500"
+                            className="w-6 h-6 text-green-500 fill-current"
                             fill="currentColor"
                             viewBox="0 0 20 20"
                             xmlns="http://www.w3.org/2000/svg"
@@ -195,10 +193,10 @@ const ProductTable = ({ product, deleteProduct, editProduct }) => {
                     </span>
                     <span
                         onClick={(e) => deleteProduct(product.product_id)}
-                        className="cursor-pointer hover:bg-gray-200 rounded-lg p-2 mx-1"
+                        className="p-2 mx-1 rounded-lg cursor-pointer hover:bg-gray-200"
                     >
                         <svg
-                            className="w-6 h-6 fill-current text-red-500"
+                            className="w-6 h-6 text-red-500 fill-current"
                             fill="currentColor"
                             viewBox="0 0 20 20"
                             xmlns="http://www.w3.org/2000/svg"
