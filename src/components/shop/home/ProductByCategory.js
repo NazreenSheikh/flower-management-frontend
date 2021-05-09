@@ -91,8 +91,8 @@ const AllProduct = ({ products }) => {
                                                 </svg>
                                             </span>
                                             <span className="text-gray-700">
-                                                {item.pRatings
-                                                    ? item.pRatings.length
+                                                {item.pRating
+                                                    ? item.pRating
                                                     : 0}
                                             </span>
                                         </div>

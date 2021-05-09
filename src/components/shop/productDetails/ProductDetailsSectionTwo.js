@@ -1,9 +1,6 @@
 import React, { Fragment, useContext, useEffect, useState } from 'react'
-import { isAuthenticate } from '../auth/fetchApi'
 import { LayoutContext } from '../layout'
 import { ProductDetailsContext } from './'
-import AllReviews from './AllReviews'
-import ReviewForm from './ReviewForm'
 import './style.css'
 
 const Menu = () => {
@@ -38,21 +35,6 @@ const Menu = () => {
     )
 }
 
-const RatingReview = () => {
-    return (
-        <Fragment>
-            <AllReviews />
-            {isAuthenticate() ? (
-                <ReviewForm />
-            ) : (
-                <div className="px-4 py-2 mb-4 mb-12 bg-red-200 rounded md:mx-16 lg:mx-20 xl:mx-24">
-                    You need to login in for review
-                </div>
-            )}
-        </Fragment>
-    )
-}
-
 const ProductDetailsSectionTwo = (props) => {
     const { data } = useContext(ProductDetailsContext)
     const { data: layoutData } = useContext(LayoutContext)
@@ -71,7 +53,9 @@ const ProductDetailsSectionTwo = (props) => {
                 {data.menu ? (
                     <div className="mt-6">{singleProduct.pDescription}</div>
                 ) : (
-                    <RatingReview />
+                    {
+                        /* <RatingReview /> */
+                    }
                 )}
             </section>
             <div className="flex justify-center px-4 py-4 m-4 space-x-4 font-light tracking-widest text-gray-800 capitalize bg-white border-t border-b md:mx-8 md:my-6">

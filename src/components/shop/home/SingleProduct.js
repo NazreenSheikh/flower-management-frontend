@@ -96,9 +96,9 @@ const SingleProduct = (props) => {
                                                 />
                                             </svg>
                                         </span>
-                                        {/* <span className="text-gray-700">
-                                            {item.pRatingsReviews.length}
-                                        </span> */}
+                                        <span className="text-gray-700">
+                                            {item.pRating}
+                                        </span>
                                     </div>
                                 </div>
                                 <div>${item.pPrice}.00</div>

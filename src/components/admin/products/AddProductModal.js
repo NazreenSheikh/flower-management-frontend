@@ -17,7 +17,6 @@ const AddProductDetail = ({ categories }) => {
         pImage: null, // Initial value will be null or empty array
         pCategory: '',
         pPrice: '',
-        pOffer: 0,
         pQuantity: '',
         success: false,
         error: false,
@@ -59,7 +58,6 @@ const AddProductDetail = ({ categories }) => {
                     pCategory: '',
                     pPrice: '',
                     pQuantity: '',
-                    pOffer: 0,
                     success: responseData.success,
                     error: false,
                 })
@@ -73,7 +71,6 @@ const AddProductDetail = ({ categories }) => {
                         pCategory: '',
                         pPrice: '',
                         pQuantity: '',
-                        pOffer: 0,
                         success: false,
                         error: false,
                     })
@@ -303,25 +300,6 @@ const AddProductDetail = ({ categories }) => {
                                     type="number"
                                     className="px-4 py-2 border focus:outline-none"
                                     id="quantity"
-                                />
-                            </div>
-                            <div className="flex flex-col w-1/2 space-y-1">
-                                <label htmlFor="offer">
-                                    Product Offfer (%) *
-                                </label>
-                                <input
-                                    value={fData.pOffer}
-                                    onChange={(e) =>
-                                        setFdata({
-                                            ...fData,
-                                            error: false,
-                                            success: false,
-                                            pOffer: e.target.value,
-                                        })
-                                    }
-                                    type="number"
-                                    className="px-4 py-2 border focus:outline-none"
-                                    id="offer"
                                 />
                             </div>
                         </div>
