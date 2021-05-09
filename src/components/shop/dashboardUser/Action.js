@@ -19,9 +19,10 @@ export const fetchData = async (dispatch) => {
         : ''
     try {
         let responseData = await getUserById(userId)
+        console.log(responseData)
         setTimeout(() => {
             if (responseData && responseData.User) {
-                dispatch({ type: 'userDetails', payload: responseData.User })
+                dispatch({ type: 'userDetails', payload: responseData.User[0] })
                 dispatch({ type: 'loading', payload: false })
             }
         }, 500)

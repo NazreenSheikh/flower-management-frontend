@@ -238,7 +238,9 @@ const Navbar = (props) => {
                                                                 />
                                                             </svg>
                                                         </span>
-                                                        <span>Setting</span>
+                                                        <span>
+                                                            Change Password
+                                                        </span>
                                                     </span>
                                                     <span
                                                         onClick={(e) =>
