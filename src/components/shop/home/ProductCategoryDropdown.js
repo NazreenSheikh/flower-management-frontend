@@ -28,9 +28,13 @@ const CategoryList = () => {
     }
 
     return (
-        <div className={`${data.categoryListDropdown ? '' : 'hidden'} my-4`}>
+        <div
+            className={`${
+                data.categoryListDropdown ? '' : 'hidden'
+            } my-4 bg-gray-700 bg-opacity-5 border-gray-300	rounded shadow	`}
+        >
             <hr />
-            <div className="py-1 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+            <div className="grid grid-cols-2 py-1 bg-gray-300 border-gray-700 rounded shadow md:grid-cols-3 lg:grid-cols-4 bg-opacity-5 ">
                 {categories && categories.length > 0 ? (
                     categories.map((item, index) => {
                         return (
@@ -41,7 +45,7 @@ const CategoryList = () => {
                                             `/products/category/${item.category_id}`
                                         )
                                     }
-                                    className="col-span-1 m-2 flex flex-col items-center justify-center space-y-2 cursor-pointer"
+                                    className="flex flex-col items-center justify-center col-span-1 m-2 space-y-2 cursor-pointer"
                                 >
                                     <img
                                         src={`${apiURL}/uploads/categories/${item.cImage}`}
@@ -55,7 +59,7 @@ const CategoryList = () => {
                         )
                     })
                 ) : (
-                    <div className="text-xl text-center my-4">No Category</div>
+                    <div className="my-4 text-xl text-center">No Category</div>
                 )}
             </div>
         </div>
@@ -116,10 +120,10 @@ const FilterList = () => {
     return (
         <div className={`${data.filterListDropdown ? '' : 'hidden'} my-4`}>
             <hr />
-            <div className="w-full flex flex-col">
-                <div className="font-medium py-2">Filter by price</div>
-                <div className="flex justify-between items-center">
-                    <div className="flex flex-col space-y-2  w-2/3 lg:w-2/4">
+            <div className="flex flex-col w-full">
+                <div className="py-2 font-medium">Filter by price</div>
+                <div className="flex items-center justify-between">
+                    <div className="flex flex-col w-2/3 space-y-2 lg:w-2/4">
                         <label htmlFor="points" className="text-sm">
                             Price (between 0 and 10$):{' '}
                             <span className="font-semibold text-yellow-700">
@@ -142,7 +146,7 @@ const FilterList = () => {
                         className="cursor-pointer"
                     >
                         <svg
-                            className="w-8 h-8 text-gray-700 hover:bg-gray-200 rounded-full p-1"
+                            className="w-8 h-8 p-1 text-gray-700 rounded-full hover:bg-gray-200"
                             fill="none"
                             stroke="currentColor"
                             viewBox="0 0 24 24"
@@ -208,13 +212,13 @@ const Search = () => {
             <input
                 value={search}
                 onChange={(e) => searchHandle(e)}
-                className="px-4 text-xl py-4 focus:outline-none"
+                className="px-4 py-4 text-xl focus:outline-none"
                 type="text"
                 placeholder="Search products..."
             />
             <div onClick={(e) => closeSearchBar()} className="cursor-pointer">
                 <svg
-                    className="w-8 h-8 text-gray-700 hover:bg-gray-200 rounded-full p-1"
+                    className="w-8 h-8 p-1 text-gray-700 rounded-full hover:bg-gray-200"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"

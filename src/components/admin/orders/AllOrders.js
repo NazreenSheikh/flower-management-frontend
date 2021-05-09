@@ -42,34 +42,23 @@ const AllCategory = (props) => {
                             <th className="px-4 py-2 border">Products</th>
                             <th className="px-4 py-2 border">Status</th>
                             <th className="px-4 py-2 border">Total</th>
-                            <th className="px-4 py-2 border">Transaction Id</th>
                             <th className="px-4 py-2 border">Customer</th>
                             <th className="px-4 py-2 border">Email</th>
                             <th className="px-4 py-2 border">Phone</th>
                             <th className="px-4 py-2 border">Address</th>
                             <th className="px-4 py-2 border">Created at</th>
                             <th className="px-4 py-2 border">Updated at</th>
-                            <th className="px-4 py-2 border">Actions</th>
                         </tr>
                     </thead>
                     <tbody>
                         {orders && orders.length > 0 ? (
-                            orders.map((item, i) => {
-                                return (
-                                    <CategoryTable
-                                        key={i}
-                                        order={item}
-                                        editOrder={(oId, type, status) =>
-                                            editOrderReq(
-                                                oId,
-                                                type,
-                                                status,
-                                                dispatch
-                                            )
-                                        }
-                                    />
-                                )
-                            })
+                            <CategoryTable
+                                key={orders.length}
+                                order={orders}
+                                editOrder={(oId, type, status) =>
+                                    editOrderReq(oId, type, status, dispatch)
+                                }
+                            />
                         ) : (
                             <tr>
                                 <td
