@@ -7,7 +7,7 @@ const ProductCategory = (props) => {
 
     return (
         <Fragment>
-            <div className="flex justify-between font-medium">
+            <div className="flex justify-between mt-10 font-medium">
                 <div
                     onClick={(e) =>
                         dispatch({

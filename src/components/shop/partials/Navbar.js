@@ -11,11 +11,6 @@ const Navbar = (props) => {
 
     const { data, dispatch } = useContext(LayoutContext)
 
-    const navbarToggleOpen = () =>
-        data.navbarHamburger
-            ? dispatch({ type: 'hamburgerToggle', payload: false })
-            : dispatch({ type: 'hamburgerToggle', payload: true })
-
     const loginModalOpen = () =>
         data.loginSignupModal
             ? dispatch({ type: 'loginSignupModalToggle', payload: false })
@@ -30,7 +25,7 @@ const Navbar = (props) => {
         <Fragment>
             {/* Navbar Section */}
             <nav className="fixed top-0 z-10 w-full bg-white shadow-lg lg:shadow-none">
-                <div className="grid grid-cols-4 m-4 md:mx-12 md:my-6 lg:grid-cols-3">
+                <div className="grid grid-cols-5 m-4 md:mx-12 md:my-6 lg:grid-cols-3">
                     <div className="flex col-span-1 mt-1 text-gray-600 lg:block">
                         <span
                             className="px-4 py-3 font-light tracking-widest rounded-lg cursor-pointer hover:bg-gray-200 hover:text-gray-800"
@@ -40,21 +35,6 @@ const Navbar = (props) => {
                         </span>
                     </div>
                     <div className="flex items-center col-span-2 lg:hidden justify-items-stretch">
-                        <svg
-                            onClick={(e) => navbarToggleOpen()}
-                            className="w-8 h-8 col-span-1 text-gray-600 cursor-pointer lg:hidden"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                            xmlns="http://www.w3.org/2000/svg"
-                        >
-                            <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth={2}
-                                d="M4 6h16M4 12h16M4 18h16"
-                            />
-                        </svg>
                         <span
                             onClick={(e) => history.push('/')}
                             style={{ letterSpacing: '0.10rem' }}
