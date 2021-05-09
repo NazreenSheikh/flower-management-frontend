@@ -5,7 +5,6 @@ import { LayoutContext } from '../index'
 import { logout } from './Action'
 import './style.css'
 
-
 const Navber = (props) => {
     const history = useHistory()
     const location = useLocation()
@@ -38,12 +37,6 @@ const Navber = (props) => {
                             onClick={(e) => history.push('/')}
                         >
                             Shop
-                        </span>
-                        <span
-                            className="px-4 py-3 font-light tracking-widest rounded-lg cursor-pointer hover:bg-gray-200 hover:text-gray-800"
-                            onClick={(e) => history.push('/contact-us')}
-                        >
-                            Contact us
                         </span>
                     </div>
                     <div className="flex items-center col-span-2 lg:hidden justify-items-stretch">
@@ -410,12 +403,6 @@ const Navber = (props) => {
                             onClick={(e) => history.push('/')}
                         >
                             Shop
-                        </span>
-                        <span
-                            className="px-3 py-2 text-lg font-medium tracking-widest rounded-lg cursor-pointer hover:text-gray-800 hover:bg-gray-200"
-                            onClick={(e) => history.push('/contact-us')}
-                        >
-                            Contact us
                         </span>
                     </div>
                 </div>
