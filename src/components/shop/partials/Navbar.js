@@ -5,14 +5,14 @@ import { LayoutContext } from '../index'
 import { logout } from './Action'
 import './style.css'
 
-const Navber = (props) => {
+const Navbar = (props) => {
     const history = useHistory()
     const location = useLocation()
 
     const { data, dispatch } = useContext(LayoutContext)
 
-    const navberToggleOpen = () =>
-        data.navberHamburger
+    const navbarToggleOpen = () =>
+        data.navbarHamburger
             ? dispatch({ type: 'hamburgerToggle', payload: false })
             : dispatch({ type: 'hamburgerToggle', payload: true })
 
@@ -28,10 +28,10 @@ const Navber = (props) => {
 
     return (
         <Fragment>
-            {/* Navber Section */}
+            {/* Navbar Section */}
             <nav className="fixed top-0 z-10 w-full bg-white shadow-lg lg:shadow-none">
                 <div className="grid grid-cols-4 m-4 md:mx-12 md:my-6 lg:grid-cols-3">
-                    <div className="flex hidden col-span-1 mt-1 text-gray-600 lg:block">
+                    <div className="flex col-span-1 mt-1 text-gray-600 lg:block">
                         <span
                             className="px-4 py-3 font-light tracking-widest rounded-lg cursor-pointer hover:bg-gray-200 hover:text-gray-800"
                             onClick={(e) => history.push('/')}
@@ -41,7 +41,7 @@ const Navber = (props) => {
                     </div>
                     <div className="flex items-center col-span-2 lg:hidden justify-items-stretch">
                         <svg
-                            onClick={(e) => navberToggleOpen()}
+                            onClick={(e) => navbarToggleOpen()}
                             className="w-8 h-8 col-span-1 text-gray-600 cursor-pointer lg:hidden"
                             fill="none"
                             stroke="currentColor"
@@ -392,7 +392,7 @@ const Navber = (props) => {
                 </div>
                 <div
                     className={
-                        data.navberHamburger && data.navberHamburger
+                        data.navbarHamburger && data.navbarHamburger
                             ? 'px-1 pb-2 md:pb-0 md:px-10 lg:hidden'
                             : 'hidden px-1 pb-2 md:pb-0 md:px-10 lg:hidden'
                     }
@@ -404,12 +404,18 @@ const Navber = (props) => {
                         >
                             Shop
                         </span>
+                        <span
+                            className="px-3 py-2 text-lg font-medium tracking-widest rounded-lg cursor-pointer hover:text-gray-800 hover:bg-gray-200"
+                            onClick={(e) => history.push('/contact-us')}
+                        >
+                            Contact us
+                        </span>
                     </div>
                 </div>
             </nav>
-            {/* End Navber Section */}
+            {/* End Navbar Section */}
         </Fragment>
     )
 }
 
-export default Navber
+export default Navbar

@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 import { useHistory } from 'react-router-dom'
 
-const AdminNavber = (props) => {
+const AdminNavbar = (props) => {
     const history = useHistory()
 
     const logout = () => {
@@ -129,11 +129,11 @@ const AdminNavber = (props) => {
                         </div>
                     </div>
                 </div>
-                {/* Mobile Navber */}
-                {/* End Mobile Navber */}
+                {/* Mobile Navbar */}
+                {/* End Mobile Navbar */}
             </nav>
         </Fragment>
     )
 }
 
-export default AdminNavber
+export default AdminNavbar
