@@ -79,9 +79,7 @@ const ProductDetailsSectionTwo = (props) => {
                     <span>Category :</span>
                     <span className="text-sm text-gray-600">
                         {' '}
-                        {singleProduct.pCategory
-                            ? singleProduct.pCategory.cName
-                            : ''}
+                        {singleProduct.pCategory ? singleProduct.pCategory : ''}
                     </span>
                 </div>
             </div>
