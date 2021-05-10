@@ -8,7 +8,7 @@ const AdminFooter = (props) => {
                 style={{ background: '#303031', color: '#87898A' }}
                 className="z-10 px-4 py-6 text-center md:px-12"
             >
-                Blooms Bay © Copyright {moment().format('YYYY')}
+                BloomsBay © Copyright {moment().format('YYYY')}
             </footer>
         </Fragment>
     )

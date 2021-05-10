@@ -30,7 +30,7 @@ const AdminNavbar = (props) => {
                         style={{ letterSpacing: '0.10rem' }}
                         className="flex px-2 text-2xl font-bold text-center text-gray-800 uppercase cursor-pointer items-left"
                     >
-                        Blooms Bay
+                        BloomsBay
                     </span>
                 </div>
                 {/* Both Screen show */}

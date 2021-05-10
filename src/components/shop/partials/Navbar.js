@@ -24,7 +24,7 @@ const Navbar = (props) => {
     return (
         <Fragment>
             {/* Navbar Section */}
-            <nav className="fixed top-0 z-10 w-full bg-white shadow-lg lg:shadow-none">
+            <nav className="fixed top-0 z-10 w-full bg-white shadow-lg lg:shadow-none ">
                 <div className="grid grid-cols-5 m-4 md:mx-12 md:my-6 lg:grid-cols-3">
                     <div className="flex col-span-1 mt-1 text-gray-600 lg:block">
                         <span
@@ -48,7 +48,7 @@ const Navbar = (props) => {
                         style={{ letterSpacing: '0.70rem' }}
                         className="flex hidden col-span-1 text-2xl font-bold tracking-widest text-center text-gray-800 uppercase cursor-pointer lg:block items-left"
                     >
-                        Blooms Bay
+                        BloomsBay
                     </div>
                     <div className="flex justify-end col-span-2 items-right lg:col-span-1">
                         {/*  WishList Page Button */}
