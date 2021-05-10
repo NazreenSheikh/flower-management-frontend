@@ -43,7 +43,6 @@ const EditProductModal = (props) => {
             product_id: data.editProductModal.product_id,
             pName: data.editProductModal.pName,
             pDescription: data.editProductModal.pDescription,
-            pImages: data.editProductModal.pImages,
             pStatus: data.editProductModal.pStatus,
             pCategory: data.editProductModal.pCategory,
             pQuantity: data.editProductModal.pQuantity,
@@ -63,11 +62,6 @@ const EditProductModal = (props) => {
 
     const submitForm = async (e) => {
         e.preventDefault()
-        if (!editformData.pEditImage) {
-            console.log('Image Not upload=============', editformData)
-        } else {
-            console.log('Image uploading')
-        }
         try {
             let responseData = await editProduct(editformData)
             if (responseData.success) {
@@ -208,42 +202,7 @@ const EditProductModal = (props) => {
                                 rows={2}
                             />
                         </div>
-                        {/* Most Important part for uploading multiple image */}
-                        <div className="flex flex-col mt-4">
-                            <label htmlFor="image">Product Images *</label>
-                            {editformData.pImages ? (
-                                <div className="flex space-x-1">
-                                    <img
-                                        className="object-cover w-16 h-16"
-                                        src={`${apiURL}/uploads/products/${editformData.pImage}`}
-                                        alt="productImage"
-                                    />
-                                    <img
-                                        className="object-cover w-16 h-16"
-                                        src={`${apiURL}/uploads/products/${editformData.pImage}`}
-                                        alt="productImage"
-                                    />
-                                </div>
-                            ) : (
-                                ''
-                            )}
-                            <input
-                                onChange={(e) =>
-                                    setEditformdata({
-                                        ...editformData,
-                                        error: false,
-                                        success: false,
-                                        pEditImage: [...e.target.files],
-                                    })
-                                }
-                                type="file"
-                                accept=".jpg, .jpeg, .png"
-                                className="px-4 py-2 border focus:outline-none"
-                                id="image"
-                                multiple
-                            />
-                        </div>
-                        {/* Most Important part for uploading multiple image */}
+
                         <div className="flex py-4 space-x-1">
                             <div className="flex flex-col w-1/2 space-y-1">
                                 <label htmlFor="status">Product Status *</label>
@@ -350,25 +309,6 @@ const EditProductModal = (props) => {
                                     type="number"
                                     className="px-4 py-2 border focus:outline-none"
                                     id="quantity"
-                                />
-                            </div>
-                            <div className="flex flex-col w-1/2 space-y-1">
-                                <label htmlFor="offer">
-                                    Product Offfer (%) *
-                                </label>
-                                <input
-                                    value={editformData.pOffer}
-                                    onChange={(e) =>
-                                        setEditformdata({
-                                            ...editformData,
-                                            error: false,
-                                            success: false,
-                                            pOffer: e.target.value,
-                                        })
-                                    }
-                                    type="number"
-                                    className="px-4 py-2 border focus:outline-none"
-                                    id="offer"
                                 />
                             </div>
                         </div>
